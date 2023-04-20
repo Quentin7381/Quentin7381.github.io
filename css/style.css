@@ -148,7 +148,15 @@ header{
     height: 100vh;
     overflow-y: scroll;
     scroll-snap-type: y mandatory;
+    scrollbar-color: var(--colorLighterTransparent) var(--colorDark);
 }
+
+    .scrollContainer::-webkit-scrollbar{
+        background-color: var(--colorDark);
+    }
+    .scrollContainer::-webkit-scrollbar-thumb{
+        background-color: var(--colorLighterTransparent);
+    }
 
 article{
     height: 100vh;
@@ -162,6 +170,13 @@ article{
         overflow-x: scroll;
         scroll-snap-type: x mandatory;
         display: flex;
+        line-height: 0;
+
+        scrollbar-width:none ;
+    }
+
+    .carroussel::-webkit-scrollbar{
+        display: none;
     }
 
     .carroussel__item{
