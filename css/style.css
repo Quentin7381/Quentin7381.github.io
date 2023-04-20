@@ -1,3 +1,7 @@
+/* <<<<< <<<<< <<<<< ----------------- >>>>> >>>>> >>>>> */
+/* <<<<< <<<<< <<<<< GENERALS SETTINGS >>>>> >>>>> >>>>> */
+/* <<<<< <<<<< <<<<< ----------------- >>>>> >>>>> >>>>> */
+
 :root{
     --fontSizeSmall: 13px;
     --fontSizeMedium: 20px;
@@ -17,6 +21,7 @@
     --shadowCrisp: 6px 6px 0px rgba(0, 0, 0, 1);
 
     --colorAccent : #4b1412;
+    --colorAccentTransparent : #4b141273;
     --colorLight : #ccd0ce;
     --colorLighter: #ffffff;
     --colorLighterTransparent: #ffffff73;
@@ -37,10 +42,28 @@
     transition: all 50ms;
     font-family: var(--fontMain);
     font-weight: 100;
+    color: var(--colorLighter);
+}
+
+h1, h2, p{
+    line-height: 1.6;
+    padding: 10px;
 }
 
 h1{
     margin:0;
+    color: var(--colorAccent);
+    text-align: center;
+}
+
+h2{
+    text-align: center;
+    border-bottom: 2px solid var(--colorLighter);
+    font-size: clamp(2rem, 3vw, 5rem);
+}
+
+p{
+    font-size: var(--fontSizeMedium);
 }
 
 a{
@@ -52,6 +75,88 @@ body{
     background-color: var(--colorLighter);
     line-height: 1.6;
 }
+
+article{
+    height: 100vh;
+    scroll-snap-align: center;
+    position: relative;
+}
+
+/* 
+    <<<<< <<<<< <<<<< ---------- >>>>> >>>>> >>>>> 
+    <<<<< <<<<< <<<<< CARROUSELS >>>>> >>>>> >>>>> 
+    <<<<< <<<<< <<<<< ---------- >>>>> >>>>> >>>>> 
+*/
+
+.carrousel{
+    background-color: lightgray;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    line-height: 0;
+
+    display: grid;
+
+    scrollbar-width: none;
+}
+
+.carrousel::-webkit-scrollbar{
+    display: none;
+}
+
+.carrousel__item{
+    grid-row: 1;
+    width: 100vw;
+    height: 100vh;
+
+    scroll-snap-align: start;
+    position: relative;
+}
+
+.carrousel__img{
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+
+.carrousel .pContainer{
+    position: absolute;
+    top:0;
+    right: 0;
+    bottom: 0;
+    width: 34vw;
+    padding: 2vw;
+    background-color: var(--colorDarkTransparent);
+    display: grid;
+}
+
+.pContainer p{
+    padding: 2vw;
+}
+
+.pContainer h2{
+    align-self: end;
+    padding: 2vw;
+}
+
+/* 
+    <<<<< <<<<< <<<<< ------ >>>>> >>>>> >>>>> 
+    <<<<< <<<<< <<<<< SCROLL >>>>> >>>>> >>>>> 
+    <<<<< <<<<< <<<<< ------ >>>>> >>>>> >>>>> 
+*/
+
+.scrollContainer{
+    height: 100vh;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    scrollbar-color: var(--colorLighterTransparent) var(--colorDark);
+}
+
+    .scrollContainer::-webkit-scrollbar{
+        background-color: var(--colorDark);
+    }
+    .scrollContainer::-webkit-scrollbar-thumb{
+        background-color: var(--colorLighterTransparent);
+    }
 
 /* 
     <<<<< <<<<< <<<<< ------ >>>>> >>>>> >>>>> 
@@ -67,6 +172,7 @@ header{
     height: 70px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     position: fixed;
+    display: none;
     top:0;
 
     left: 20vw;
@@ -103,13 +209,13 @@ header{
         margin-left: auto !important;
     }
 
+
+
 /*
     <<<<< <<<<< <<<<< ------- >>>>> >>>>> >>>>>
     <<<<< <<<<< <<<<< BANDEAU >>>>> >>>>> >>>>>
     <<<<< <<<<< <<<<< ------- >>>>> >>>>> >>>>>
 */
-
-
 
 .bandeauH1{
     z-index: 0;
@@ -134,112 +240,81 @@ header{
         padding: 10vh 0;
     }
 
-        .title>h1{
-            text-align: center;
-        }
-
 /*
-    <<<<< <<<<< <<<<< ------- >>>>> >>>>> >>>>>
-    <<<<< <<<<< <<<<< ARTICLES >>>>> >>>>> >>>>>
-    <<<<< <<<<< <<<<< ------- >>>>> >>>>> >>>>>
+    <<<<< <<<<< <<<<< -------- >>>>> >>>>> >>>>>
+    <<<<< <<<<< <<<<< A PROPOS >>>>> >>>>> >>>>>
+    <<<<< <<<<< <<<<< -------- >>>>> >>>>> >>>>>
 */
-
-.scrollContainer{
-    height: 100vh;
-    overflow-y: scroll;
-    scroll-snap-type: y mandatory;
-    scrollbar-color: var(--colorLighterTransparent) var(--colorDark);
-}
-
-    .scrollContainer::-webkit-scrollbar{
-        background-color: var(--colorDark);
-    }
-    .scrollContainer::-webkit-scrollbar-thumb{
-        background-color: var(--colorLighterTransparent);
-    }
-
-article{
-    height: 100vh;
-    scroll-snap-align: center;
-}
-
-    .carroussel{
-        width: 100%;
-        height: 100%;
-        background-color: lightgray;
-        overflow-x: scroll;
-        scroll-snap-type: x mandatory;
-        display: flex;
-        line-height: 0;
-
-        scrollbar-width:none ;
-    }
-
-    .carroussel::-webkit-scrollbar{
-        display: none;
-    }
-
-    .carroussel__item{
-        height: 100%;
-        scroll-snap-align: start;
-    }
-
-    .carroussel__img{
-        object-fit: cover;
-        height: 100%;
-    }
-
-h2{
-    color: var(--colorAccent);
-    font-size: clamp(2rem, 3vw, 5rem);
-    width: calc(100% - 5vw);
-    max-width: 1200px;
-    margin: auto;
-}
-
-p{
-    width: calc(100% - 5vw);
-    max-width: 1200px;
-    margin: auto;
-    line-height: 1.6;
-    font-size: var(--fontSizeMedium);
-}
-
 .aPropos{
     position: relative;
 }
 
-    .aPropos>.carroussel{
-    }
-
-    .aPropos>.aPropos__pCol{
+    .aPropos .pContainer{
         position: absolute;
         right: 0;
         top: 0;
-        width: max(350px, 33vw);
+
+        width: max(350px, 34vw);
         max-width: 100vw;
         height: 100%;
 
-        padding-top: var(--headerHeight);
-        grid-row: 2;
-        grid-column: 2;
+        padding: var(--headerHeight) 2vw 2vw 2vw;
         background-color: var(--colorDarkTransparent);
 
         display: flex;
+        flex-direction: column;
     }
 
-    .aPropos__pContainer{
-        margin: auto;
+    .aPropos .pContainer h2{
+        margin-top: auto;
+        padding: 2vw;
     }
 
+    .aPropos .pContainer p{
+        margin-bottom: auto;
+        padding: 2vw;
+    }
 
-        .aPropos__pContainer>p{
-            padding: 10px 0;
-            color: var(--colorLighter);
-        }
+    .aPropos .carrousel__item{
+        width: 66vw;
+    }
 
-        .aPropos__pContainer>h2{
-            color: white;
-            text-align: center;
-            border-bottom: 2px solid white;
-        }
+/*
+    <<<<< <<<<< <<<<< -------- >>>>> >>>>> >>>>>
+    <<<<< <<<<< <<<<< CHANTIER >>>>> >>>>> >>>>>
+    <<<<< <<<<< <<<<< -------- >>>>> >>>>> >>>>>
+*/
+
+.chantier h2,p{
+    color: var(--colorLighter);
+}
+
+/* Customized carrousels*/
+.chantier .pContainer{
+    position: absolute;
+    right: unset;
+    left: 0;
+    width: 34vw;
+
+    display: grid;
+    grid-template-rows: repeat(2, 50vh);
+    z-index: 1;
+
+    background-color: unset;
+}
+
+.chantier>.pContainer{
+    background-color: var(--colorAccentTransparent);
+}
+
+.chantier p{
+    grid-row: 2;
+    height: 50vh;
+}
+
+.chantier h2{
+    height: 100%;
+}
+.carrousel__item{
+
+}
