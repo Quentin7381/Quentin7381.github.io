@@ -9,13 +9,21 @@
     <link rel="icon" type="image/png" href="img/favicon.ico"/>
     <link rel="stylesheet" href="./css/normalize.css">
     <link rel="stylesheet" href="./css/style.css">
+    <script src="/js/script.js" defer></script>
 </head>
 <body>
-    <header>
+    <header class="header">
+        <svg class="ico ico_menu headerToggleBtn" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 490.667 490.667" xml:space="preserve" width="512" height="512">
+            <g>
+                <path d="M469.333,224h-448C9.551,224,0,233.551,0,245.333c0,11.782,9.551,21.333,21.333,21.333h448   c11.782,0,21.333-9.551,21.333-21.333C490.667,233.551,481.115,224,469.333,224z"/>
+                <path d="M21.333,117.333h448c11.782,0,21.333-9.551,21.333-21.333s-9.551-21.333-21.333-21.333h-448C9.551,74.667,0,84.218,0,96   S9.551,117.333,21.333,117.333z"/>
+                <path d="M469.333,373.333h-448C9.551,373.333,0,382.885,0,394.667C0,406.449,9.551,416,21.333,416h448   c11.782,0,21.333-9.551,21.333-21.333C490.667,382.885,481.115,373.333,469.333,373.333z"/>
+            </g>
+        </svg>
         <a href="">À propos</a>
         <a href="">Mes créations</a>
         <a href="">Contact</a>
-        <img class= "logo" src="/img/logo.jpg" alt="logo d'en matière de">
+        <img class="logo" src="/img/logo.jpg" alt="logo d'en matière de">
     </header>
 
     <!-- <<<<< <<<<< <<<<< TITLE >>>>> >>>>> >>>>> -->
@@ -35,22 +43,30 @@
             <div class="carrousel">
 
                 <!-- Img1 -->
-                <div class="carrousel__item">
+                <div class="carrousel__item carrousel__item1">
                     <img id="aPropos__carrousel__img1" class="carrousel__img" src="img/boudha.jpg" alt="image d'un boudha sculpté en bas relief">
                 </div>
                 <!-- Img2 -->
-                <div class="carrousel__item">
+                <div class="carrousel__item carrousel__item2">
                     <img id="aPropos__carrousel__img2" class="carrousel__img" src="img/aquarium.jpg" alt="image d'un poisson sculpté en bas relief">
                 </div>
                 <!-- Img3 -->
-                <div class="carrousel__item">
-                    <img id="aPropos__carrousel__img2" class="carrousel__img" src="img/chantierArbre4.jpg" alt="image d'un arbre sculpté en bas relief">
+                <div class="carrousel__item carrousel__item3">
+                    <img id="aPropos__carrousel__img3" class="carrousel__img" src="img/chantierArbre4.jpg" alt="image d'un arbre sculpté en bas relief">
+                </div>
+                <!-- Img4 -->
+                <div class="carrousel__item carrousel__item4">
+                    <img id="aPropos__carrousel__img4" class="carrousel__img" src="img/heronPortrait.jpg" alt="image d'un arbre sculpté en bas relief">
                 </div>
             </div>
             <div class="pContainer">
-                <h2>Apportez du relief à votre décoration intérrieure</h2>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsum accusamus explicabo nobis facilis, enim rerum tempore, accusantium quas numquam blanditiis qui. Porro dolore nemo cum sequi aperiam tempore in nihil!
-            Dolorum nihil consequatur a, recusandae natus in aperiam provident numquam dolore laboriosam eum. Odit veniam ducimus distinctio fugit ipsum, laborum quae nisi velit debitis, quod, vel cum quo odio eaque.</p>
+                <h2>Apportez du relief à votre décoration intérieure</h2>
+                <div class="carrousel">
+                    <p class="carrousel__text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsum accusamus explicabo nobis facilis, enim rerum tempore, accusantium quas numquam blanditiis qui. Porro dolore nemo cum sequi aperiam tempore in nihil!
+                    Dolorum nihil consequatur a, recusandae natus in aperiam provident</p>
+                    <p class="carrousel__text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsum accusamus explicabo nobis facilis, enim rerum tempore, accusantium quas numquam blanditiis qui. Porro dolore nemo cum sequi aperiam tempore in nihil!
+                        Dolorum nihil consequatur a, recusandae natus in aperiam provident</p>
+                </div>
             </div>
         </article>
 
@@ -59,19 +75,22 @@
         <article class="chantier">
             <div class="pContainer">
                 <h2>À votre écoute pour des créations personnalisées</h2>
+                <div class="carrousel">
+                    <p class="carrousel__text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsum accusamus explicabo nobis facilis, enim rerum tempore, accusantium quas numquam blanditiis qui. Porro dolore nemo cum sequi aperiam tempore in nihil!
+                    Dolorum nihil consequatur a, recusandae natus in aperiam provident</p>
+                    <p class="carrousel__text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsum accusamus explicabo nobis facilis, enim rerum tempore, accusantium quas numquam blanditiis qui. Porro dolore nemo cum sequi aperiam tempore in nihil!
+                        Dolorum nihil consequatur a, recusandae natus in aperiam provident</p>
+                </div>
             </div>
             <div class="carrousel">
+                <div class="carrousel__item carrousel__item0">
+                    <img id="chantier__carrousel__img0" class="carrousel__img" src="img/arbrePortrait.jpg" alt="dessin d'un arbre qui sera réalisé en bas relief">
+                </div>
                 <div class="carrousel__item carrousel__item1">
                     <img id="chantier__carrousel__img1" class="carrousel__img" src="img/chantierArbre1.jpg" alt="dessin d'un arbre qui sera réalisé en bas relief">
-                    <div class="pContainer">
-                        <p>Le blabla numero 1</p>
-                    </div>
                 </div>
                 <div class="carrousel__item carrousel__item2">
                     <img id="chantier__carrousel__img2" class="carrousel__img" src="img/chantierArbre2.jpg" alt="dessin d'un arbre qui sera réalisé en bas relief">
-                    <div class="pContainer">
-                        <p>Le blabla numero 2</p>
-                    </div>
                 </div>
                 <div class="carrousel__item carrousel__item3">
                     <img id="chantier__carrousel__img3" class="carrousel__img" src="img/chantierArbre3.jpg" alt="dessin d'un arbre qui sera réalisé en bas relief">
