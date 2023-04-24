@@ -1,30 +1,53 @@
 /* ----- ----- ----- ------ ----- ----- ----- */
 /* ----- ----- ----- HEADER ----- ----- ----- */
 /* ----- ----- ----- ------ ----- ----- ----- */
-const Header = {
+const header = {
         target : document.querySelector('header'),
         button : document.querySelector('.headerToggleBtn'),
         links : document.querySelectorAll('header a'),
         logo : document.querySelector('header .logo'),
         collapsed : false,
         toggle : ()=> {
-            if(Header.collapsed === true){
-                Header.links.forEach(link => {
-                    link.classList.remove('hidden');
-                });
-                Header.target.classList.remove('collapsed');
-                Header.logo.classList.remove('hidden');
-                Header.collapsed = false;
+            header.collapsed = !header.collapsed
+            if(header.collapsed === false){
+                header.target.classList.remove('collapsed');
             } else {
-                Header.links.forEach(link => {
-                    link.classList.add('hidden');
-                });
-                Header.target.classList.add('collapsed');
-                Header.logo.classList.add('hidden');
-                Header.collapsed = true;
+                header.target.classList.add('collapsed');
             }
-            return Header.collapsed;
+            return header.collapsed;
         }
 };
 
-Header.button.addEventListener('click', Header.toggle);
+header.button.addEventListener('click', header.toggle);
+
+/* ----- ----- ----- ------ ----- ----- ----- */
+/* ----- ----- ----- SCROLL ----- ----- ----- */
+/* ----- ----- ----- ------ ----- ----- ----- */
+const scroller = {
+    target : document.querySelector('.scrollContainer'),
+    tile : 0,
+    scroll : (event)=> {
+        const newTile = Math.round(scroller.target.scrollTop / (scroller.target.clientHeight));
+
+        if(newTile != scroller.tile){
+
+            switch(newTile){
+                case 0 :
+                    header.button.classList.add('hidden');
+                    header.target.classList.remove('collapsed');
+                    break;
+                case 1 :
+                    switch(scroller.tile){
+                        case 0 :
+                            header.button.classList.remove('hidden');
+                            header.target.classList.add('collapsed');
+                    }
+                    break;
+            }
+
+            scroller.tile = newTile;
+        }
+    }
+};
+
+scroller.target.addEventListener('scroll', (e)=>scroller.scroll(e))

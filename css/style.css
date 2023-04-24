@@ -40,7 +40,6 @@
     -webkit-box-sizing: border-box;
     margin: 0;
     padding: 0;
-    transition: all 50ms;
     font-family: var(--fontMain);
     font-weight: 100;
     color: var(--colorLighter);
@@ -182,6 +181,7 @@ header{
 }
 
     header .ico_menu{
+        opacity: 1;
         fill: white;
         height: var(--headerHeight);
         width: var(--headerHeight);
@@ -190,21 +190,28 @@ header{
         cursor: pointer;
         background-color: var(--colorAccent);
 
-        transition: background-color 500ms,
-            border-radius 500ms,
-            fill 500ms;
+        transition-property: background-color, border-radius, fill, opactiy, padding, width;
+        transition-duration: 500ms;
+
+        transition: transform 750ms,
+        box-shadow 750ms,
+        background-color 500ms, 
+        border-radius 500ms, 
+        fill 500ms,
+        padding 500ms, 
+        width 500ms;
 
     }
 
     header .ico_menu:hover{
         transform: scale(1.05);
         box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-        outline: solid 2px var(--colorLighter);
     }
 
     header .ico_menu.hidden{
         width: 0;
-        opacity: 0;
+        padding: 0;
+        fill: var(--colorAccent);
     }
     
     header>a{
@@ -219,13 +226,13 @@ header{
         font-size: 20px;
         white-space: nowrap;
 
-        transition: opacity 500ms;
+        transition: opacity 500ms, background-color 500ms;
+        transition: transform 75ms, box-shadow 75ms;
     }
 
     header>a:hover{
-        transform: scale(1.05);
+        transform: scale(1.10);
         box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-        outline: 2px solid var(--colorLighter);
     }
 
     header>a>::after{
@@ -261,6 +268,7 @@ header.collapsed .ico_menu{
 header.collapsed a{
     overflow: hidden;
     padding: 0;
+    background-color: #ffffff00;
     opacity: 0;
 }
 
