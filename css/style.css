@@ -3,36 +3,27 @@
 /* <<<<< <<<<< <<<<< ----------------- >>>>> >>>>> >>>>> */
 
 :root{
-    --fontSizeSmall: 13px;
-    --fontSizeMedium: 20px;
-    --fontSizeLarge: 36px;
-    --fontSizeXLarge: 42px;
-    --spacingSmall: 0.44rem;
-    --spacingSmall: 0.67rem;
-    --spacingSmall: 1rem;
-    --spacingSmall: 1.5rem;
-    --spacingSmall: 2.25rem;
-    --spacingSmall: 3.38rem;
-    --spacingSmall: 5.06rem;
-    --shadowNatural: 6px 6px 9px rgba(0, 0, 0, 0.2);
-    --shadowDeep: 12px 12px 50px rgba(0, 0, 0, 0.4);
-    --shadowSharp: 6px 6px 0px rgba(0, 0, 0, 0.2);
-    --shadowOutlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);
-    --shadowCrisp: 6px 6px 0px rgba(0, 0, 0, 1);
+    --shadowLight: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    --shadowHover: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 
     --colorAccent : #4b1412;
     --colorAccentTransparent : #4b141273;
     --colorLight : #ccd0ce;
     --colorLighter: #ffffff;
     --colorLighterTransparent: #ffffff73;
-    --colorDarkTransparent: #20202073;
-    --colorDark : #202020;
+    --colorLighterTransparenter: #ffffff20;
+    --colorDarkTransparent: #28282873;
+    --colorDark : #282828;
     --fontAccent : "Arial";
     --fontMain : "Arial";
 
     --headerHeight : 70px;
     --scrollWidth : 17px;
 }
+
+html {
+    scroll-behavior: smooth;
+  }
 
 *{
     box-sizing: border-box;
@@ -146,14 +137,64 @@ article{
     overflow-y: scroll;
     scroll-snap-type: y mandatory;
     scrollbar-color: var(--colorLighterTransparent) var(--colorDark);
+    scrollbar-width: none;
 }
 
     .scrollContainer::-webkit-scrollbar{
+        width: 0;
         background-color: var(--colorDark);
     }
     .scrollContainer::-webkit-scrollbar-thumb{
         background-color: var(--colorLighterTransparent);
     }
+
+    .scrollContainer .btn{
+        background-color: var(--colorLighterTransparenter);
+        height: 40px;
+        position: absolute;
+        z-index: 9;
+        left: 45vw;
+        right: 45vw;
+        cursor: pointer;
+        opacity: 1;
+        font-size: 30px;
+        display: flex;
+        box-shadow: var(--shadowLight);
+        transition: box-shadow 75ms, opacity 500ms, width 500ms, color 75ms, background-color 75ms;
+    }
+
+    .scrollContainer .btn p{
+        line-height: 1;
+        margin: auto;
+        padding: 0;
+        color: var(--colorDark);
+    }
+
+    .scrollContainer .btn:hover{
+        box-shadow: var(--shadowHover);
+    }
+
+    .scrollContainer .btn:hover p{
+        color: var(--colorDark);
+    }
+
+    .scrollContainer .btn.hidden{
+        opacity: 0;
+        width: 0;
+        overflow: hidden;
+        color: #ffffff00;
+    }
+    .scrollContainer .btnUp{
+        top: 0;
+        border-radius: 0 0 10px 10px;
+    }
+
+    .scrollContainer .btnDown{
+        bottom: 0;
+        border-radius: 10px 10px 0 0;
+    }
+
+
 
 /* 
     <<<<< <<<<< <<<<< ------ >>>>> >>>>> >>>>> 
@@ -167,7 +208,7 @@ header{
     color: var(--colorLighter);
     display: flex;
     height: 70px;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    box-shadow: var(--shadowLight);
     position: fixed;
     top:0;
 
@@ -193,8 +234,8 @@ header{
         transition-property: background-color, border-radius, fill, opactiy, padding, width;
         transition-duration: 500ms;
 
-        transition: transform 750ms,
-        box-shadow 750ms,
+        transition: transform 75ms,
+        box-shadow 75ms,
         background-color 500ms, 
         border-radius 500ms, 
         fill 500ms,
@@ -204,14 +245,8 @@ header{
     }
 
     header .ico_menu:hover{
-        transform: scale(1.05);
-        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    }
-
-    header .ico_menu.hidden{
-        width: 0;
-        padding: 0;
-        fill: var(--colorAccent);
+        transform: scale(1.15);
+        box-shadow: var(--shadowHover);
     }
     
     header>a{
@@ -276,6 +311,12 @@ header.collapsed .logo{
     overflow: hidden;
     padding: 0;
     opacity: 0;
+}
+
+header .ico_menu.hidden{
+    width: 0;
+    padding: 0;
+    fill: var(--colorAccent);
 }
 
 /*

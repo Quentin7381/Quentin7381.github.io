@@ -20,15 +20,20 @@
                 <path d="M469.333,373.333h-448C9.551,373.333,0,382.885,0,394.667C0,406.449,9.551,416,21.333,416h448   c11.782,0,21.333-9.551,21.333-21.333C490.667,382.885,481.115,373.333,469.333,373.333z"/>
             </g>
         </svg>
-        <a href="">À propos</a>
-        <a href="">Mes créations</a>
-        <a href="">Contact</a>
+        <a href="#aPropos" behavior="smooth">À propos</a>
+        <a href="#chantier">Mes créations</a>
+        <a href="#contact">Contact</a>
         <img class="logo" src="/img/logo.jpg" alt="logo d'en matière de">
     </header>
 
-    <!-- <<<<< <<<<< <<<<< TITLE >>>>> >>>>> >>>>> -->
+    <!-- <<<<< <<<<< <<<<< SCROLL >>>>> >>>>> >>>>> -->
 
     <div class="scrollContainer">
+        <div class="btn btnUp"><p>˄</p></div>
+        <div class="btn btnDown"><p>˅</p></div>
+
+        <!-- <<<<< <<<<< <<<<< TITLE >>>>> >>>>> >>>>> -->
+
         <article class="bandeauH1">
             <img alt="Photos d'un bas relief en plâtre et d'outils" src="img/potsEtOutilsBandeau.jpg">
             <div class="title">
@@ -39,7 +44,7 @@
             
         <!-- <<<<< <<<<< <<<<< A PROPOS >>>>> >>>>> >>>>> -->
 
-        <article class="aPropos">
+        <article id="aPropos" class="aPropos">
             <div class="carrousel">
 
                 <!-- Img1 -->
@@ -72,7 +77,7 @@
 
         <!-- <<<<< <<<<< <<<<< CHANTIER >>>>> >>>>> >>>>> -->
 
-        <article class="chantier">
+        <article id="chantier" class="chantier">
             <div class="pContainer">
                 <h2>À votre écoute pour des créations personnalisées</h2>
                 <div class="carrousel">
@@ -100,7 +105,7 @@
                 </div>
             </div>
         </article>
-        <article>
+        <article id="contact">
             <h2>Contact</h2>
         </article>
     </div>
