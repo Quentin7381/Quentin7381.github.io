@@ -216,7 +216,6 @@ header{
     width: 60vw;
 
     border-radius: 0 0 7px 7px;
-    overflow: hidden;
 
     transition: all 500ms;
 }
@@ -243,6 +242,10 @@ header{
         width 500ms;
 
     }
+    
+    header :nth-child(2){
+        border-radius: 0 0 0 7px;
+    }
 
     header .ico_menu:hover{
         transform: scale(1.15);
@@ -265,7 +268,7 @@ header{
         transition: transform 75ms, box-shadow 75ms;
     }
 
-    header>a:hover{
+    header>a:hover,header>.logo:hover{
         transform: scale(1.10);
         box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     }
@@ -282,6 +285,7 @@ header{
 
     .logo{
         margin-left: auto !important;
+        border-radius: 0 0 7px 0;
     }
 
 /* <<<<< Header collapse >>>>> */

@@ -58,11 +58,8 @@ const scroller = {
 		}
 	},
 	scroll: (direction) => {
-		console.log("scroll");
 		scroller.target.scroll({
-			top:
-				scroller.target.scrollTop +
-				direction * scroller.target.clientHeight,
+			top: scroller.target.scrollTop + direction * scroller.target.clientHeight,
 			behavior: "smooth",
 		});
 	},
@@ -71,3 +68,25 @@ const scroller = {
 scroller.target.addEventListener("scroll", (e) => scroller.onScroll(e));
 scroller.scrollBtns[0].addEventListener("click", () => scroller.scroll(-1));
 scroller.scrollBtns[1].addEventListener("click", () => scroller.scroll(1));
+
+/* ----- ----- ----- -------------- ----- ----- ----- */
+/* ----- ----- ----- SMOOTH ANCHORS ----- ----- ----- */
+/* ----- ----- ----- -------------- ----- ----- ----- */
+console.log(document.querySelectorAll('a[href^="#"]'));
+
+document.querySelectorAll('a[href^="#"]').forEach((anchor)=>{
+	anchor.addEventListener('click', (e)=>{
+		e.preventDefault();
+		document.querySelector(anchor.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+	})
+});
+
+document.querySelector('header .logo').addEventListener('click', (e)=>{
+	console.log(e)
+	scroller.target.scroll({
+		top: 0,
+		behavior: "smooth",
+	});
+})

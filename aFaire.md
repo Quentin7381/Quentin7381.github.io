@@ -1,5 +1,10 @@
-- [] Script header
+- [x] Script header
 - [] Script carroussels
     - Scroll
     - Scrollsync
 - [] Script scroll
+    - [x] Scroll btns
+    - [] Smooth scroll on anchors
+- [] Code reorganisation
+    - [] Split files
+    - [] Comment
