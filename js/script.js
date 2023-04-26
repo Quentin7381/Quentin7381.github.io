@@ -48,10 +48,10 @@ const scroller = {
 						case 3:
 							scroller.scrollBtns[1].classList.remove("hidden");
 					}
-                    break;
+					break;
 				case 3:
 					scroller.scrollBtns[1].classList.add("hidden");
-                    break;
+					break;
 			}
 
 			scroller.tile = newTile;
@@ -59,7 +59,9 @@ const scroller = {
 	},
 	scroll: (direction) => {
 		scroller.target.scroll({
-			top: scroller.target.scrollTop + direction * scroller.target.clientHeight,
+			top:
+				scroller.target.scrollTop +
+				direction * scroller.target.clientHeight,
 			behavior: "smooth",
 		});
 	},
@@ -74,19 +76,19 @@ scroller.scrollBtns[1].addEventListener("click", () => scroller.scroll(1));
 /* ----- ----- ----- -------------- ----- ----- ----- */
 console.log(document.querySelectorAll('a[href^="#"]'));
 
-document.querySelectorAll('a[href^="#"]').forEach((anchor)=>{
-	anchor.addEventListener('click', (e)=>{
+document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+	anchor.addEventListener("click", (e) => {
 		e.preventDefault();
-		document.querySelector(anchor.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
-	})
+		document.querySelector(anchor.getAttribute("href")).scrollIntoView({
+			behavior: "smooth",
+		});
+	});
 });
 
-document.querySelector('#logo').addEventListener('click', (e)=>{
-	console.log(e)
+document.querySelector("#logo").addEventListener("click", (e) => {
+	console.log(e);
 	scroller.target.scroll({
 		top: 0,
 		behavior: "smooth",
 	});
-})
+});

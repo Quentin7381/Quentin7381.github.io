@@ -1,114 +1,180 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta>
-    <meta>
-    <title>En matière de</title>
-    
-    <link rel="icon" type="image/png" href="img/favicon.ico"/>
-    <link rel="stylesheet" href="./css/normalize.css">
-    <link rel="stylesheet" href="./css/style.css">
-    <script src="/js/script.js" defer></script>
-</head>
-<body>
-    <header class="header">
-        <svg class="ico ico_menu headerToggleBtn hidden" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 490.667 490.667" xml:space="preserve" width="512" height="512">
-            <g>
-                <path d="M469.333,224h-448C9.551,224,0,233.551,0,245.333c0,11.782,9.551,21.333,21.333,21.333h448   c11.782,0,21.333-9.551,21.333-21.333C490.667,233.551,481.115,224,469.333,224z"/>
-                <path d="M21.333,117.333h448c11.782,0,21.333-9.551,21.333-21.333s-9.551-21.333-21.333-21.333h-448C9.551,74.667,0,84.218,0,96   S9.551,117.333,21.333,117.333z"/>
-                <path d="M469.333,373.333h-448C9.551,373.333,0,382.885,0,394.667C0,406.449,9.551,416,21.333,416h448   c11.782,0,21.333-9.551,21.333-21.333C490.667,382.885,481.115,373.333,469.333,373.333z"/>
-            </g>
-        </svg>
-        <a href="#aPropos" behavior="smooth">À propos</a>
-        <a href="#chantier">Mes créations</a>
-        <a href="#contact">Contact</a>
-    </header>
-    <div id="logo" class="logo" ><img src="/img/logo.png" alt="logo d'en matière de"></div>
+	<head>
+		<meta charset="UTF-8" />
+		<meta />
+		<meta />
+		<title>En matière de</title>
 
-    <!-- <<<<< <<<<< <<<<< SCROLL >>>>> >>>>> >>>>> -->
+		<link rel="icon" type="image/png" href="img/favicon.ico" />
+		<link rel="stylesheet" href="./css/normalize.css" />
+		<link rel="stylesheet" href="./css/style.css" />
+		<script src="/js/script.js" defer></script>
+	</head>
+	<body>
+		<header class="header">
+			<svg
+				class="ico ico_menu headerToggleBtn hidden"
+				xmlns="http://www.w3.org/2000/svg"
+				xmlns:xlink="http://www.w3.org/1999/xlink"
+				version="1.1"
+				id="Capa_1"
+				x="0px"
+				y="0px"
+				viewBox="0 0 490.667 490.667"
+				xml:space="preserve"
+				width="512"
+				height="512"
+			>
+				<g>
+					<path
+						d="M469.333,224h-448C9.551,224,0,233.551,0,245.333c0,11.782,9.551,21.333,21.333,21.333h448   c11.782,0,21.333-9.551,21.333-21.333C490.667,233.551,481.115,224,469.333,224z"
+					/>
+					<path
+						d="M21.333,117.333h448c11.782,0,21.333-9.551,21.333-21.333s-9.551-21.333-21.333-21.333h-448C9.551,74.667,0,84.218,0,96   S9.551,117.333,21.333,117.333z"
+					/>
+					<path
+						d="M469.333,373.333h-448C9.551,373.333,0,382.885,0,394.667C0,406.449,9.551,416,21.333,416h448   c11.782,0,21.333-9.551,21.333-21.333C490.667,382.885,481.115,373.333,469.333,373.333z"
+					/>
+				</g>
+			</svg>
+			<a href="#aPropos" behavior="smooth">À propos</a>
+			<a href="#chantier">Mes créations</a>
+			<a href="#contact">Contact</a>
+		</header>
+		<div id="logo" class="logo">
+			<img src="/img/logo.png" alt="logo d'en matière de" />
+		</div>
 
-    <div class="scrollContainer">
-        <div class="btn btnUp"><p>˄</p></div>
-        <div class="btn btnDown"><p>˅</p></div>
+		<!-- <<<<< <<<<< <<<<< SCROLL >>>>> >>>>> >>>>> -->
 
-        <!-- <<<<< <<<<< <<<<< TITLE >>>>> >>>>> >>>>> -->
+		<div class="scrollContainer">
+			<div class="btn btnUp"><p>˄</p></div>
+			<div class="btn btnDown"><p>˅</p></div>
 
-        <article class="bandeauH1">
-            <img alt="Photos d'un bas relief en plâtre et d'outils" src="img/potsEtOutilsBandeau.jpg">
-            <div class="title">
-                <h1>En matière de, <br>
-                Bas reliefs muraux sur mesure</h1>
-            </div>
-        </article>
-            
-        <!-- <<<<< <<<<< <<<<< A PROPOS >>>>> >>>>> >>>>> -->
+			<!-- <<<<< <<<<< <<<<< TITLE >>>>> >>>>> >>>>> -->
 
-        <article id="aPropos" class="aPropos">
-            <div class="carrousel">
+			<article class="bandeauH1">
+				<img
+					alt="Photos d'un bas relief en plâtre et d'outils"
+					src="img/potsEtOutilsBandeau.jpg"
+				/>
+				<div class="title">
+					<h1>
+						En matière de, <br />
+						Bas reliefs muraux sur mesure
+					</h1>
+				</div>
+			</article>
 
-                <!-- Img1 -->
-                <div class="carrousel__item carrousel__item1">
-                    <img id="aPropos__carrousel__img1" class="carrousel__img" src="img/boudha.jpg" alt="image d'un boudha sculpté en bas relief">
-                </div>
-                <!-- Img2 -->
-                <div class="carrousel__item carrousel__item2">
-                    <img id="aPropos__carrousel__img2" class="carrousel__img" src="img/aquarium.jpg" alt="image d'un poisson sculpté en bas relief">
-                </div>
-                <!-- Img3 -->
-                <div class="carrousel__item carrousel__item3">
-                    <img id="aPropos__carrousel__img3" class="carrousel__img" src="img/chantierArbre4.jpg" alt="image d'un arbre sculpté en bas relief">
-                </div>
-                <!-- Img4 -->
-                <div class="carrousel__item carrousel__item4">
-                    <img id="aPropos__carrousel__img4" class="carrousel__img" src="img/heronPortrait.jpg" alt="image d'un arbre sculpté en bas relief">
-                </div>
-            </div>
-            <div class="pContainer">
-                <h2>Apportez du relief à votre décoration intérieure</h2>
-                <div class="carrousel">
-                    <p class="carrousel__text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsum accusamus explicabo nobis facilis, enim rerum tempore, accusantium quas numquam blanditiis qui. Porro dolore nemo cum sequi aperiam tempore in nihil!
-                    Dolorum nihil consequatur a, recusandae natus in aperiam provident</p>
-                    <p class="carrousel__text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsum accusamus explicabo nobis facilis, enim rerum tempore, accusantium quas numquam blanditiis qui. Porro dolore nemo cum sequi aperiam tempore in nihil!
-                        Dolorum nihil consequatur a, recusandae natus in aperiam provident</p>
-                </div>
-            </div>
-        </article>
+			<!-- <<<<< <<<<< <<<<< A PROPOS >>>>> >>>>> >>>>> -->
 
-        <!-- <<<<< <<<<< <<<<< CHANTIER >>>>> >>>>> >>>>> -->
+			<article id="aPropos" class="aPropos">
+				<div class="carrousel">
+					<!-- Img1 -->
+					<div class="carrousel__item carrousel__item1">
+						<img
+							id="aPropos__carrousel__img1"
+							class="carrousel__img"
+							src="img/boudha.jpg"
+							alt="image d'un boudha sculpté en bas relief"
+						/>
+					</div>
+					<!-- Img2 -->
+					<div class="carrousel__item carrousel__item2">
+						<img
+							id="aPropos__carrousel__img2"
+							class="carrousel__img"
+							src="img/aquarium.jpg"
+							alt="image d'un poisson sculpté en bas relief"
+						/>
+					</div>
+					<!-- Img3 -->
+					<div class="carrousel__item carrousel__item3">
+						<img
+							id="aPropos__carrousel__img3"
+							class="carrousel__img"
+							src="img/chantierArbre4.jpg"
+							alt="image d'un arbre sculpté en bas relief"
+						/>
+					</div>
+					<!-- Img4 -->
+					<div class="carrousel__item carrousel__item4">
+						<img
+							id="aPropos__carrousel__img4"
+							class="carrousel__img"
+							src="img/heronPortrait.jpg"
+							alt="image d'un arbre sculpté en bas relief"
+						/>
+					</div>
+				</div>
+				<div class="pContainer">
+					<h2>Apportez du relief à votre décoration intérieure</h2>
+					<div class="text">
+                        <p>Ajoutez de la profondeur à votre espace avec des décorations élégantes, jouant avec les lumières et les ombres pour une atmosphère qui change au fil de la journée et des éclairages.</p>
+                        <p>L'espace mural devient poétique et changeant, il est le reflet votre personnalité, la touche d'originalité élégante et discrète qui donne du caractère à votre espace.</p>
+                    </div>
+				</div>
+			</article>
 
-        <article id="chantier" class="chantier">
-            <div class="pContainer">
-                <h2>À votre écoute pour des créations personnalisées</h2>
-                <div class="carrousel">
-                    <p class="carrousel__text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsum accusamus explicabo nobis facilis, enim rerum tempore, accusantium quas numquam blanditiis qui. Porro dolore nemo cum sequi aperiam tempore in nihil!
-                    Dolorum nihil consequatur a, recusandae natus in aperiam provident</p>
-                    <p class="carrousel__text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsum accusamus explicabo nobis facilis, enim rerum tempore, accusantium quas numquam blanditiis qui. Porro dolore nemo cum sequi aperiam tempore in nihil!
-                        Dolorum nihil consequatur a, recusandae natus in aperiam provident</p>
-                </div>
-            </div>
-            <div class="carrousel">
-                <div class="carrousel__item carrousel__item0">
-                    <img id="chantier__carrousel__img0" class="carrousel__img" src="img/arbrePortrait.jpg" alt="dessin d'un arbre qui sera réalisé en bas relief">
-                </div>
-                <div class="carrousel__item carrousel__item1">
-                    <img id="chantier__carrousel__img1" class="carrousel__img" src="img/chantierArbre1.jpg" alt="dessin d'un arbre qui sera réalisé en bas relief">
-                </div>
-                <div class="carrousel__item carrousel__item2">
-                    <img id="chantier__carrousel__img2" class="carrousel__img" src="img/chantierArbre2.jpg" alt="dessin d'un arbre qui sera réalisé en bas relief">
-                </div>
-                <div class="carrousel__item carrousel__item3">
-                    <img id="chantier__carrousel__img3" class="carrousel__img" src="img/chantierArbre3.jpg" alt="dessin d'un arbre qui sera réalisé en bas relief">
-                </div>
-                <div class="carrousel__item carrousel__item4">
-                    <img id="chantier__carrousel__img4" class="carrousel__img" src="img/chantierArbre4.jpg" alt="dessin d'un arbre qui sera réalisé en bas relief">
-                </div>
-            </div>
-        </article>
-        <article id="contact">
-            <h2>Contact</h2>
-        </article>
-    </div>
-    <footer></footer>
-</body>
+			<!-- <<<<< <<<<< <<<<< CHANTIER >>>>> >>>>> >>>>> -->
+
+			<article id="chantier" class="chantier">
+				<div class="pContainer">
+					<h2>Mes talents à votre disposition pour des ambiances à la mesure de vos rêves.</h2>
+					<div class="text">
+                        <p>Forte de mon expérience dans les métiers du bâtiments ainsi que dans les arts, je conçois des motifs sur mesure et de toutes tailles, adaptés à l'ambiance de vos pièce.</p>
+                        <p>J'utilise une technique d'enduisage à base de plâtre, un matérieu simple et sain, permetant la réalisation de reliefs sur de nombreux supports muraux.</p>
+                    </div>
+                    
+				</div>
+				<div class="carrousel">
+					<div class="carrousel__item carrousel__item0">
+						<img
+							id="chantier__carrousel__img0"
+							class="carrousel__img"
+							src="img/arbrePortrait.jpg"
+							alt="dessin d'un arbre qui sera réalisé en bas relief"
+						/>
+					</div>
+					<div class="carrousel__item carrousel__item1">
+						<img
+							id="chantier__carrousel__img1"
+							class="carrousel__img"
+							src="img/chantierArbre1.jpg"
+							alt="dessin d'un arbre qui sera réalisé en bas relief"
+						/>
+					</div>
+					<div class="carrousel__item carrousel__item2">
+						<img
+							id="chantier__carrousel__img2"
+							class="carrousel__img"
+							src="img/chantierArbre2.jpg"
+							alt="dessin d'un arbre qui sera réalisé en bas relief"
+						/>
+					</div>
+					<div class="carrousel__item carrousel__item3">
+						<img
+							id="chantier__carrousel__img3"
+							class="carrousel__img"
+							src="img/chantierArbre3.jpg"
+							alt="dessin d'un arbre qui sera réalisé en bas relief"
+						/>
+					</div>
+					<div class="carrousel__item carrousel__item4">
+						<img
+							id="chantier__carrousel__img4"
+							class="carrousel__img"
+							src="img/chantierArbre4.jpg"
+							alt="dessin d'un arbre qui sera réalisé en bas relief"
+						/>
+					</div>
+				</div>
+			</article>
+			<article id="contact">
+				<h2>Contact</h2>
+			</article>
+		</div>
+		<footer></footer>
+	</body>
 </html>
