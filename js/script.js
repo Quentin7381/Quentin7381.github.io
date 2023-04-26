@@ -83,7 +83,7 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor)=>{
 	})
 });
 
-document.querySelector('header .logo').addEventListener('click', (e)=>{
+document.querySelector('#logo').addEventListener('click', (e)=>{
 	console.log(e)
 	scroller.target.scroll({
 		top: 0,

@@ -4,15 +4,16 @@
 
 :root{
     --shadowLight: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    --shadowHover: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    --shadowMedium: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    --shadowIntense: rgba(0, 0, 0, 0.6) 0px 5px 15px;
 
     --colorAccent : #4b1412;
     --colorAccentTransparent : #4b141273;
     --colorLight : #ccd0ce;
     --colorLighter: #ffffff;
     --colorLighterTransparent: #ffffff73;
-    --colorLighterTransparenter: #ffffff20;
-    --colorDarkTransparent: #28282873;
+    --colorLighterTransparenter: #ffffff40;
+    --colorDarkTransparent: #282828AA;
     --colorDark : #282828;
     --fontAccent : "Arial";
     --fontMain : "Arial";
@@ -159,7 +160,7 @@ article{
         opacity: 1;
         font-size: 30px;
         display: flex;
-        box-shadow: var(--shadowLight);
+        box-shadow: var(--shadowMedium);
         transition: box-shadow 75ms, opacity 500ms, width 500ms, color 75ms, background-color 75ms;
     }
 
@@ -171,7 +172,7 @@ article{
     }
 
     .scrollContainer .btn:hover{
-        box-shadow: var(--shadowHover);
+        box-shadow: var(--shadowIntense);
     }
 
     .scrollContainer .btn:hover p{
@@ -242,17 +243,14 @@ header{
         width 500ms;
 
     }
-    
-    header :nth-child(2){
-        border-radius: 0 0 0 7px;
-    }
 
     header .ico_menu:hover{
         transform: scale(1.15);
-        box-shadow: var(--shadowHover);
+        box-shadow: var(--shadowMedium);
     }
     
     header>a{
+        border-radius: 0 0 7px 7px;
         text-align: center;
         display: flex;
         align-items: center;
@@ -268,7 +266,7 @@ header{
         transition: transform 75ms, box-shadow 75ms;
     }
 
-    header>a:hover,header>.logo:hover{
+    header>a:hover, #logo:hover{
         transform: scale(1.10);
         box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     }
@@ -286,6 +284,23 @@ header{
     .logo{
         margin-left: auto !important;
         border-radius: 0 0 7px 0;
+        position: fixed;
+        right: 20vw;
+        z-index: 20;
+        width: var(--headerHeight);
+        height: var(--headerHeight);
+        object-fit: contain;
+        background-color: white;
+        transition: all 500ms, transform 75ms, box-shadow 75ms;
+        display: flex;
+        cursor: pointer;
+    }
+
+    .logo>img{
+        object-fit: contain;
+        height: 70px;
+        width: 70px;
+        margin-left: auto;
     }
 
 /* <<<<< Header collapse >>>>> */
@@ -311,10 +326,15 @@ header.collapsed a{
     opacity: 0;
 }
 
-header.collapsed .logo{
-    overflow: hidden;
-    padding: 0;
-    opacity: 0;
+header.collapsed + #logo{
+    position: fixed;
+    background-color: white;
+    top: 0;
+    right: 0;
+    border-radius: 0 0 0 90px;
+    object-fit: contain;
+    width: 90px;
+    height: 90px;
 }
 
 header .ico_menu.hidden{
