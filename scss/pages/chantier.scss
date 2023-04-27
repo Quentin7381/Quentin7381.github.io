@@ -3,38 +3,39 @@
     <<<<< <<<<< <<<<< CHANTIER >>>>> >>>>> >>>>>
     <<<<< <<<<< <<<<< -------- >>>>> >>>>> >>>>>
 */
-.chantier .carrousel__item {
-    width: 66%;
-    scroll-snap-align: end;
-}
+.chantier{
+    & .carrousel__item {
+        width: 66%;
+        scroll-snap-align: end;
 
-.chantier .carrousel__item0 {
-    width: 34%;
-}
+        &0 {
+            width: 34%;
+        }
+    }
+    
+    
+    
+    & .pContainer {
+        position: absolute;
+        right: unset;
+        left: 0;
+        width: 34%;
+        height: 100%;
+    
+        display: flex;
+        flex-direction: column;
+        z-index: 1;
 
-.chantier .pContainer {
-    position: absolute;
-    right: unset;
-    left: 0;
-    width: 34%;
-    height: 100%;
+        border-right: solid 2px var(--colorLighter);
 
-    display: flex;
-    flex-direction: column;
-    z-index: 1;
-
-    background-color: unset;
-    border-right: solid 2px var(--colorLighter);
-}
-
-.chantier>.pContainer {
-    background-color: var(--colorDarkTransparent);
-}
-
-.chantier h2 {
-    margin-top: auto;
-}
-
-.chantier .text{
-    margin-bottom: auto;
+        background-color: var(--colorDarkTransparent);
+    }
+    
+    & h2 {
+        margin-top: auto;
+    }
+    
+    & .text{
+        margin-bottom: auto;
+    }
 }

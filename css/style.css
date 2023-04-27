@@ -28,17 +28,11 @@ html {
 
 * {
   box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
   margin: 0;
   padding: 0;
   font-family: var(--fontMain);
   font-weight: 100;
   color: var(--colorLighter);
-}
-
-.pContainer {
-  padding: 1vw;
 }
 
 h1,
@@ -73,13 +67,6 @@ body {
   background-color: var(--colorLighter);
 }
 
-article {
-  height: 100vh;
-  width: 100%;
-  scroll-snap-align: center;
-  position: relative;
-}
-
 /* 
     <<<<< <<<<< <<<<< ---------- >>>>> >>>>> >>>>> 
     <<<<< <<<<< <<<<< CARROUSELS >>>>> >>>>> >>>>> 
@@ -94,11 +81,9 @@ article {
   display: flex;
   scrollbar-width: none;
 }
-
 .carrousel::-webkit-scrollbar {
   display: none;
 }
-
 .carrousel__item {
   flex-shrink: 0;
   width: 100%;
@@ -106,21 +91,15 @@ article {
   scroll-snap-align: start;
   position: relative;
 }
-
 .carrousel__img {
   object-fit: cover;
   height: 100%;
   width: 100%;
 }
-
 .carrousel__text {
   width: 100%;
   flex-shrink: 0;
   scroll-snap-align: start;
-}
-
-.pContainer h2 {
-  align-self: end;
 }
 
 /* 
@@ -142,7 +121,6 @@ header {
   border-radius: 0 0 7px 7px;
   transition: all 500ms;
 }
-
 header .ico_menu {
   opacity: 1;
   fill: white;
@@ -156,12 +134,10 @@ header .ico_menu {
   transition-duration: 500ms;
   transition: transform 75ms, box-shadow 75ms, background-color 500ms, border-radius 500ms, fill 500ms, padding 500ms, width 500ms;
 }
-
 header .ico_menu:hover {
   transform: scale(1.15);
   box-shadow: var(--shadowMedium);
 }
-
 header > a {
   border-radius: 0 0 7px 7px;
   text-align: center;
@@ -176,19 +152,9 @@ header > a {
   transition: opacity 500ms, background-color 500ms;
   transition: transform 75ms, box-shadow 75ms;
 }
-
-header > a:hover,
-#logo:hover {
+header > a:hover {
   transform: scale(1.1);
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-}
-
-header > a > ::after {
-  content: "";
-  border-right: 2px solid var(--colorLight);
-  height: 100px;
-  width: 100px;
-  background-color: yellow;
 }
 
 .logo {
@@ -205,12 +171,15 @@ header > a > ::after {
   display: flex;
   cursor: pointer;
 }
-
 .logo > img {
   object-fit: contain;
   height: 70px;
   width: 70px;
   margin-left: auto;
+}
+.logo:hover {
+  transform: scale(1.1);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 /* <<<<< Header collapse >>>>> */
@@ -222,20 +191,17 @@ header.collapsed {
   background-color: rgba(255, 255, 255, 0);
   border-radius: 35px;
 }
-
 header.collapsed .ico_menu {
   fill: var(--colorDark);
   background-color: var(--colorLighterTransparent);
   border-radius: 35px;
 }
-
 header.collapsed a {
   overflow: hidden;
   padding: 0;
   background-color: rgba(255, 255, 255, 0);
   opacity: 0;
 }
-
 header.collapsed + #logo {
   position: fixed;
   background-color: white;
@@ -253,6 +219,13 @@ header .ico_menu.hidden {
   fill: var(--colorAccent);
 }
 
+.pContainer {
+  padding: 1vw;
+}
+.pContainer h2 {
+  align-self: end;
+}
+
 /* 
     <<<<< <<<<< <<<<< ------ >>>>> >>>>> >>>>> 
     <<<<< <<<<< <<<<< SCROLL >>>>> >>>>> >>>>> 
@@ -265,16 +238,13 @@ header .ico_menu.hidden {
   scrollbar-color: var(--colorLighterTransparent) var(--colorDark);
   scrollbar-width: none;
 }
-
 .scrollContainer::-webkit-scrollbar {
   width: 0;
   background-color: var(--colorDark);
 }
-
 .scrollContainer::-webkit-scrollbar-thumb {
   background-color: var(--colorLighterTransparent);
 }
-
 .scrollContainer .btn {
   background-color: var(--colorLighterTransparenter);
   height: 40px;
@@ -289,37 +259,38 @@ header .ico_menu.hidden {
   box-shadow: var(--shadowMedium);
   transition: box-shadow 75ms, opacity 500ms, width 500ms, color 75ms, background-color 75ms;
 }
-
 .scrollContainer .btn p {
   line-height: 1;
   margin: auto;
   padding: 0;
   color: var(--colorDark);
 }
-
 .scrollContainer .btn:hover {
   box-shadow: var(--shadowIntense);
 }
-
 .scrollContainer .btn:hover p {
   color: var(--colorDark);
 }
-
 .scrollContainer .btn.hidden {
   opacity: 0;
   width: 0;
   overflow: hidden;
   color: rgba(255, 255, 255, 0);
 }
-
 .scrollContainer .btnUp {
   top: 0;
   border-radius: 0 0 10px 10px;
 }
-
 .scrollContainer .btnDown {
   bottom: 0;
   border-radius: 10px 10px 0 0;
+}
+
+article {
+  height: 100vh;
+  width: 100%;
+  scroll-snap-align: center;
+  position: relative;
 }
 
 /*
@@ -327,14 +298,13 @@ header .ico_menu.hidden {
     <<<<< <<<<< <<<<< BANDEAU >>>>> >>>>> >>>>>
     <<<<< <<<<< <<<<< ------- >>>>> >>>>> >>>>>
 */
-.bandeauH1 {
+.accueil {
   z-index: 0;
   position: relative;
   width: 100%;
   height: 100%;
 }
-
-.bandeauH1 > img {
+.accueil > img {
   object-fit: cover;
   height: 100%;
   width: 100%;
@@ -358,7 +328,6 @@ header .ico_menu.hidden {
 .aPropos {
   position: relative;
 }
-
 .aPropos .pContainer {
   position: absolute;
   right: 0;
@@ -372,19 +341,15 @@ header .ico_menu.hidden {
   display: flex;
   flex-direction: column;
 }
-
 .aPropos .pContainer h2 {
   margin-top: auto;
 }
-
 .aPropos .pContainer .text {
   margin-bottom: auto;
 }
-
 .aPropos .carrousel__item {
   width: 66%;
 }
-
 .aPropos .carrousel__item4 {
   width: 34%;
 }
@@ -398,11 +363,9 @@ header .ico_menu.hidden {
   width: 66%;
   scroll-snap-align: end;
 }
-
 .chantier .carrousel__item0 {
   width: 34%;
 }
-
 .chantier .pContainer {
   position: absolute;
   right: unset;
@@ -412,18 +375,12 @@ header .ico_menu.hidden {
   display: flex;
   flex-direction: column;
   z-index: 1;
-  background-color: unset;
   border-right: solid 2px var(--colorLighter);
-}
-
-.chantier > .pContainer {
   background-color: var(--colorDarkTransparent);
 }
-
 .chantier h2 {
   margin-top: auto;
 }
-
 .chantier .text {
   margin-bottom: auto;
 }
