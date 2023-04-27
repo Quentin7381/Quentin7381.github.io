@@ -1,6 +1,12 @@
 /* ----- ----- ----- ------ ----- ----- ----- */
 /* ----- ----- ----- HEADER ----- ----- ----- */
 /* ----- ----- ----- ------ ----- ----- ----- */
+/**
+ * An object allowing easier header manipulation
+ * target : the header itself
+ * button : the button used to toggle the header
+ * toggle : show/hide the header
+ */
 const header = {
 	target: document.querySelector("header"),
 	button: document.querySelector(".headerToggleBtn"),
@@ -19,23 +25,39 @@ header.button.addEventListener("click", header.toggle);
 /* ----- ----- ----- ------ ----- ----- ----- */
 /* ----- ----- ----- SCROLL ----- ----- ----- */
 /* ----- ----- ----- ------ ----- ----- ----- */
+/**
+ * An object to manage scrolling
+ * target : the scroll container of the page
+ * tile : page is divided in tiles (articles). One tile takes a full screen, and scroll snaps to it
+ * scrollBtns : btns that allow to scroll by click
+ */
 const scroller = {
 	target: document.querySelector(".scrollContainer"),
 	tile: 0,
 	scrollBtns: document.querySelectorAll(".scrollContainer > .btn"),
+	/**
+	 * trigered by all scrollings. Dynamicly hide the menus
+	 * @param {*} event 
+	 */
 	onScroll: (event) => {
+		//First we calc the tile we are arriving on
 		const newTile = Math.round(
 			scroller.target.scrollTop / scroller.target.clientHeight
 		);
-
+		
+		//Then if we changed tile...
 		if (newTile != scroller.tile) {
+			//We check the tile we arrived on
 			switch (newTile) {
+				//If it is the first one
 				case 0:
 					header.button.classList.add("hidden");
 					scroller.scrollBtns[0].classList.add("hidden");
 					header.target.classList.remove("collapsed");
 					break;
+				//The second
 				case 1:
+					//Only if we came from the first one to the second one (so menu doesn't hide when scrolling upwards)
 					switch (scroller.tile) {
 						case 0:
 							header.button.classList.remove("hidden");
@@ -57,6 +79,10 @@ const scroller = {
 			scroller.tile = newTile;
 		}
 	},
+	/**
+	 * allow to scroll using events
+	 * @param {*} direction -1 is upward, 1 is downward. IMPORTANT NOTE : greater or lower numbers will multiply the scroll. To scroll 2 tiles up, you can use direction : -2;
+	 */
 	scroll: (direction) => {
 		scroller.target.scroll({
 			top:
@@ -74,6 +100,7 @@ scroller.scrollBtns[1].addEventListener("click", () => scroller.scroll(1));
 /* ----- ----- ----- -------------- ----- ----- ----- */
 /* ----- ----- ----- SMOOTH ANCHORS ----- ----- ----- */
 /* ----- ----- ----- -------------- ----- ----- ----- */
+//Prevent default anchor behaviour to insted scroll smoothly
 console.log(document.querySelectorAll('a[href^="#"]'));
 
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {

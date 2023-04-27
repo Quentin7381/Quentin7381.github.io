@@ -1,0 +1,84 @@
+/*
+    <<<<< <<<<< <<<<< ------- >>>>> >>>>> >>>>>
+    <<<<< <<<<< <<<<< CONTACT >>>>> >>>>> >>>>>
+    <<<<< <<<<< <<<<< ------- >>>>> >>>>> >>>>>
+*/
+
+.contact{
+    display: flex;
+
+    & .pContainer{
+        padding-top: var(--headerHeight);
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        flex-grow: 0;
+        flex-shrink: 0;
+
+        background-color: var(--colorDarkTransparent);
+
+        &__1{
+            width: 66vw;
+
+            & p{
+                text-align: center;
+                margin: 0 auto;
+                text-shadow: var(--shadowNeat);
+                font-size: 2em;
+
+                & strong{
+                    color: var(--colorAccent);
+                }
+            }
+    
+            & :nth-child(1){
+                margin-top: auto;
+            }
+    
+            & :nth-child(2){
+                margin-bottom: auto;
+            }
+        }
+
+        &__2{
+            width: 34vw;
+            border-left: 2px solid var(--colorLight);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+
+            & .line{
+                display: flex;
+                padding: 0 0 0 2vw;
+                flex-grow: 0;
+
+                & i{
+                    font-size: 32px;
+                    margin: auto 0;
+                    color: var(--colorAccent);
+
+                }
+    
+                & p,a{
+                    margin: auto 0;
+                }
+            }
+
+            
+
+            & h2{
+                align-self: flex-start;
+            }
+        }
+    }
+
+    & .img{
+        position: absolute;
+        object-fit: cover;
+        width: 66vw;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        z-index: -1;
+    }
+}

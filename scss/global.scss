@@ -4,7 +4,8 @@
 :root {
     --shadowLight: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     --shadowMedium: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    --shadowIntense: rgba(0, 0, 0, 0.6) 0px 5px 15px;
+    --shadowStrong: rgba(0, 0, 0, 0.6) 0px 5px 15px;
+    --shadowNeat: rgba(0, 0, 0, 0.6) 2px 2px 2px;
 
     --colorAccent: #4b1412;
     --colorAccentTransparent: #4b141273;
@@ -12,7 +13,7 @@
     --colorLighter: #ffffff;
     --colorLighterTransparent: #ffffff73;
     --colorLighterTransparenter: #ffffff40;
-    --colorDarkTransparent: #282828AA;
+    --colorDarkTransparent: #28282866;
     --colorDark: #282828;
     --fontAccent: "Arial";
     --fontMain: "Arial";
@@ -35,13 +36,22 @@ html {
     padding: 0;
     font-family: var(--fontMain);
     font-weight: 100;
+}
+
+h1,
+h2,
+h3,
+p{
     color: var(--colorLighter);
 }
 
 h1,
 h2,
-p {
+h3,
+p,
+a {
     padding: 1vw;
+    text-shadow: var(--shadowLight);
 }
 
 h1 {
@@ -61,9 +71,11 @@ p{
     line-height: 1.6;
 }
 
-a {
+a, a>* {
     color: var(--colorAccent);
     text-decoration: none;
+    line-height: 1.6;
+    font-size: max(1.25vw, 1em);
 }
 
 body {
