@@ -1,0 +1,41 @@
+/*
+    <<<<< <<<<< <<<<< -------- >>>>> >>>>> >>>>>
+    <<<<< <<<<< <<<<< A PROPOS >>>>> >>>>> >>>>>
+    <<<<< <<<<< <<<<< -------- >>>>> >>>>> >>>>>
+*/
+.aPropos {
+    position: relative;
+}
+
+.aPropos .pContainer {
+    position: absolute;
+    right: 0;
+    top: 0;
+
+    width: max(350px, 34%);
+    max-width: 100vw;
+    height: 100%;
+
+    padding: 1vw;
+    background-color: var(--colorDarkTransparent);
+    border-left: solid 2px var(--colorLighter);
+
+    display: flex;
+    flex-direction: column;
+}
+
+.aPropos .pContainer h2 {
+    margin-top: auto;
+}
+
+.aPropos .pContainer .text {
+    margin-bottom: auto;
+}
+
+.aPropos .carrousel__item {
+    width: 66%;
+}
+
+.aPropos .carrousel__item4 {
+    width: 34%;
+}
