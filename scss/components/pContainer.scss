@@ -1,6 +1,7 @@
 .pContainer {
     padding: 1vw;
-
+    overflow: scroll;
+    
     & h2{
         align-self: end;
     }

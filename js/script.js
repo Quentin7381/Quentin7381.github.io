@@ -7,6 +7,14 @@
  * button : the button used to toggle the header
  * toggle : show/hide the header
  */
+
+const SCREEN_WIDTH = window.screen.width;
+const AUTO_TOGGLE_WIDTH = 780;
+
+if(SCREEN_WIDTH <= AUTO_TOGGLE_WIDTH){
+	document.querySelector("header").classList.add('collapsed')
+};
+
 const header = {
 	target: document.querySelector("header"),
 	button: document.querySelector(".headerToggleBtn"),
@@ -53,15 +61,17 @@ const scroller = {
 				case 0:
 					header.button.classList.add("hidden");
 					scroller.scrollBtns[0].classList.add("hidden");
-					header.target.classList.remove("collapsed");
+					if(SCREEN_WIDTH>AUTO_TOGGLE_WIDTH){
+						header.target.classList.remove("collapsed");
+					}
 					break;
 				//The second
 				case 1:
 					//Only if we came from the first one to the second one (so menu doesn't hide when scrolling upwards)
 					switch (scroller.tile) {
 						case 0:
-							header.button.classList.remove("hidden");
 							header.target.classList.add("collapsed");
+							header.button.classList.remove("hidden");
 							scroller.scrollBtns[0].classList.remove("hidden");
 					}
 					break;

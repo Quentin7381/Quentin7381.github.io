@@ -15,6 +15,8 @@
         flex-grow: 0;
         flex-shrink: 0;
 
+        overflow: scroll;
+
         background-color: var(--colorDarkTransparent);
 
         &__1{
@@ -72,7 +74,7 @@
         }
     }
 
-    & .img{
+    & img{
         position: absolute;
         object-fit: cover;
         width: 66vw;
@@ -80,5 +82,61 @@
         top: 0;
         left: 0;
         z-index: -1;
+    }
+}
+/* 
+    <<<<< <<<<< <<<<< ----- >>>>> >>>>> >>>>> 
+    <<<<< <<<<< <<<<< PHONE >>>>> >>>>> >>>>> 
+    <<<<< <<<<< <<<<< ----- >>>>> >>>>> >>>>> 
+*/
+@media (max-width:1040px) {
+    .contact{
+        & img{
+            width: calc(100% - 350px);
+        }
+
+        & .pContainer{
+            
+            &__1{
+                width: calc(100% - 350px);
+            }
+            
+
+            &__2{
+                width: 350px;
+            }
+        }
+    }
+}
+
+@media (max-width:700px){
+    .contact{
+        & img {
+            width: 100%;
+        }
+
+        & .pContainer{
+            
+
+            &__1{
+                display: none;
+            }
+
+            &__2{
+                width: 100%;
+                padding-left: calc(50% - 150px);
+                padding-right: calc(50% - 150px);
+                border-left: none;
+            }
+        }
+    }
+}
+
+@media (max-width: 330px){
+    .contact{
+        & .pContainer{
+            padding-left: 2vw;
+            padding-right: 2vw;
+        }
     }
 }

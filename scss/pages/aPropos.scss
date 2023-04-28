@@ -15,7 +15,7 @@
         max-width: 100vw;
         height: 100%;
     
-        padding: 1vw;
+        padding: var(--headerHeight) 1vw 30px 1vw;
         background-color: var(--colorDarkTransparent);
         border-left: solid 2px var(--colorLighter);
     
@@ -46,3 +46,42 @@
     <<<<< <<<<< <<<<< PHONE >>>>> >>>>> >>>>> 
     <<<<< <<<<< <<<<< ----- >>>>> >>>>> >>>>> 
 */
+@media (max-width:1040px) {
+    .aPropos{
+        & .carrousel__item{
+            width: calc(100% - 350px);
+
+            &4{
+                width: 350px;
+            }
+        }
+    }
+}
+
+@media (max-width:700px){
+    .aPropos{
+        & .carrousel__item{
+            width: 100%;
+
+            &4{
+                display: none;
+            }
+        }
+
+        & .pContainer{
+            width: 100%;
+            padding-left: calc(50% - 150px);
+            padding-right: calc(50% - 150px);
+            border-left: none;
+        }
+    }
+}
+
+@media (max-width: 330px){
+    .aPropos{
+        & .pContainer{
+            padding-left: 2vw;
+            padding-right: 2vw;
+        }
+    }
+}
