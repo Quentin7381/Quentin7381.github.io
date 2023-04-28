@@ -62,7 +62,7 @@ header {
         white-space: nowrap;
     
         transition: opacity 500ms, background-color 500ms;
-        transition: transform 75ms, box-shadow 75ms;
+        transition: transform 75ms, box-shadow 75ms, border-radius 75ms;
 
         &:hover{
             transform: scale(1.10);
@@ -103,6 +103,8 @@ header {
 /* <<<<< Header collapse >>>>> */
 header.collapsed {
     width: 70px;
+    min-width: 70px;
+    height: 70px;
     left: 1vw;
     top: 1vw;
     right: unset;
@@ -134,8 +136,58 @@ header.collapsed {
     }
 }
 
-header .ico_menu.hidden {
-    width: 0;
-    padding: 0;
-    fill: var(--colorAccent);
+@media (min-width: 701px){
+    header .ico_menu.hidden {
+        width: 0;
+        padding: 0;
+        fill: var(--colorAccent);
+    }
+}
+
+/* 
+    <<<<< <<<<< <<<<< ----- >>>>> >>>>> >>>>> 
+    <<<<< <<<<< <<<<< PHONE >>>>> >>>>> >>>>> 
+    <<<<< <<<<< <<<<< ----- >>>>> >>>>> >>>>> 
+*/
+@media (max-width: 700px){
+    header{
+        left: 0;
+        flex-direction: column;
+        height: 100vh;
+        width: unset;
+        min-width: 300px;
+        border-radius: 0;
+
+        & a{
+            padding: 0 30px;
+            border-radius: 0;
+            text-decoration: underline;
+            &:hover{
+                border-radius: 0 7px 7px 0;
+            }
+        }
+
+        & .ico_menu{
+            border-radius: 7px;
+            margin: 0 auto 0 0;
+        }
+    }
+
+    #logo{
+        position: fixed;
+        background-color: white;
+        top: 0;
+        right: 0;
+        border-radius: 0 0 0 90px;
+        object-fit: contain;
+        width: 90px;
+        height: 90px;
+    }
+}
+
+@media (max-width: 300px){
+    header{
+        min-width: 100%;
+        overflow: scroll;
+    }
 }
