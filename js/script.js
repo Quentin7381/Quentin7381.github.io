@@ -133,3 +133,12 @@ document.querySelector("#logo").addEventListener("click", (e) => {
 		behavior: "smooth",
 	});
 });
+
+/* ----- ----- ----- ----------- ----- ----- ----- */
+/* ----- ----- ----- LAZY IMAGES ----- ----- ----- */
+/* ----- ----- ----- ----------- ----- ----- ----- */
+//Lazy load all images
+
+document.querySelectorAll('img').forEach((img)=>{
+	img.setAttribute('loading', 'lazy');
+})
