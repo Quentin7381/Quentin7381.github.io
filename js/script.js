@@ -7,11 +7,9 @@
  * button : the button used to toggle the header
  * toggle : show/hide the header
  */
-
-const SCREEN_WIDTH = window.screen.width;
 const AUTO_TOGGLE_WIDTH = 780;
 
-if(SCREEN_WIDTH <= AUTO_TOGGLE_WIDTH){
+if(window.screen.width <= AUTO_TOGGLE_WIDTH){
 	document.querySelector("header").classList.add('collapsed')
 };
 
@@ -59,10 +57,11 @@ const scroller = {
 			switch (newTile) {
 				//If it is the first one
 				case 0:
-					header.button.classList.add("hidden");
 					scroller.scrollBtns[0].classList.add("hidden");
 					if(SCREEN_WIDTH>AUTO_TOGGLE_WIDTH){
 						header.target.classList.remove("collapsed");
+						console.log(window.screen.width, AUTO_TOGGLE_WIDTH);
+						header.button.classList.add("hidden");
 					}
 					break;
 				//The second
@@ -87,6 +86,11 @@ const scroller = {
 			}
 
 			scroller.tile = newTile;
+		}
+
+		//Collapsing menu when screen size is small
+		if(window.screen.width<=AUTO_TOGGLE_WIDTH){
+			header.target.classList.add('collapsed');
 		}
 	},
 	/**
