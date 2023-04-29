@@ -29,17 +29,18 @@
         padding: calc(1.5vh) calc(5vw);
         cursor: pointer;
         opacity: 1;
-        font-size: clamp(1.5em, calc(2vw + 2vh),2em);
+        font-size: clamp(1.25em, calc(2vw + 2vh),2em);
         display: flex;
         box-shadow: var(--shadowMedium);
-        transition: box-shadow 75ms, opacity 500ms, width 500ms, color 75ms, background-color 75ms;
+        transition: box-shadow 75ms, opacity 500ms, color 75ms, background-color 75ms, transform 500ms, height 500ms, padding 500ms;
         outline: 1px solid var(--colorLighter);
+        overflow: hidden;
 
         & i {
             line-height: 1;
             margin: auto;
             padding: 0;
-            color: var(--colorAccent);
+            color: var(--colorDarker);
         }
         
         &:hover {
@@ -49,22 +50,26 @@
         &:hover p {
             color: var(--colorDark);
         }
-        
-        &.hidden {
+
+        &.hidden{
             opacity: 0;
-            width: 0;
-            overflow: hidden;
-            color: #ffffff00;
         }
         
         &Up {
             top: 0;
             border-radius: 0 0 10px 10px;
+
+            &.hidden{
+                transform: translate(-50%, -50%) scale(100%, 0%);
+            }
         }
         
         &Down {
             bottom: 0;
             border-radius: 10px 10px 0 0;
+            &.hidden{
+                transform: translate(-50%, 50%) scale(100%, 0%);
+            }
         }
     }
 }

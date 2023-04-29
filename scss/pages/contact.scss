@@ -47,21 +47,36 @@
             flex-direction: column;
             justify-content: space-around;
 
+            background-color: var(--colorAccent);
+
+            & a:hover{
+                transform: scale(1.05);
+                & p{
+                    text-decoration: underline;
+                }
+            }
+
             & .line{
                 display: flex;
                 padding: 2vh 2vw;
                 flex-grow: 0;
+                flex-shrink: 1;
 
                 & i{
                     font-size: 32px;
                     margin: auto calc(1vw) auto 0;
-                    color: var(--colorAccent);
+                    color: var(--colorLighter);
 
                 }
     
-                & p,a{
+                & p{
                     margin: auto 0;
+                    color: var(--colorLighter);
                 }
+            }
+
+            & h3{
+                padding: 2vh 0;
             }
 
             
@@ -125,6 +140,11 @@
                 padding-left: calc(50% - 150px);
                 padding-right: calc(50% - 150px);
                 border-left: none;
+                background-color: var(--colorDarkTransparent);
+
+                & h2,h3{
+                    color: var(--colorAccent);
+                }
             }
         }
     }

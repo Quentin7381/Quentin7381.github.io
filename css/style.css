@@ -17,7 +17,7 @@
   --colorDark: #282828;
   --fontAccent: "Arial";
   --fontMain: "Arial";
-  --headerHeight: 70px;
+  --headerHeight: 10vh;
   --scrollWidth: 17px;
   --fontSizeSmall: max(1.25vw, 1em);
   --fontSizeMedium: max(1.75vw, 1.25em);
@@ -125,7 +125,7 @@ header {
   background-color: var(--colorAccent);
   color: var(--colorLighter);
   display: flex;
-  height: 70px;
+  height: var(--headerHeight);
   box-shadow: var(--shadowLight);
   position: fixed;
   top: 0;
@@ -139,7 +139,7 @@ header .ico_menu {
   fill: white;
   height: var(--headerHeight);
   width: var(--headerHeight);
-  padding: 20px;
+  padding: 2vh;
   flex-shrink: 0;
   cursor: pointer;
   background-color: var(--colorAccent);
@@ -186,8 +186,8 @@ header > a:hover {
 }
 .logo > img {
   object-fit: contain;
-  height: 70px;
-  width: 70px;
+  height: var(--headerHeight);
+  width: var(--headerHeight);
   margin-left: auto;
 }
 .logo:hover {
@@ -197,9 +197,9 @@ header > a:hover {
 
 /* <<<<< Header collapse >>>>> */
 header.collapsed {
-  width: 70px;
-  min-width: 70px;
-  height: 70px;
+  width: var(--headerHeight);
+  min-width: var(--headerHeight);
+  height: var(--headerHeight);
   left: 1vw;
   top: 1vw;
   right: unset;
@@ -219,16 +219,16 @@ header.collapsed a {
 }
 header.collapsed + #logo {
   position: fixed;
-  background-color: white;
+  background-color: var(--colorLighterTransparent);
   top: 0;
   right: 0;
   border-radius: 0 0 0 90px;
   object-fit: contain;
-  width: 90px;
-  height: 90px;
+  width: calc(var(--headerHeight) * 1.3);
+  height: calc(var(--headerHeight) * 1.3);
 }
 
-@media (min-width: 701px) {
+@media (min-width: 781px) {
   header .ico_menu.hidden {
     width: 0;
     padding: 0;
@@ -249,6 +249,16 @@ header.collapsed + #logo {
     min-width: 300px;
     border-radius: 0;
   }
+  header + #logo {
+    position: fixed;
+    background-color: var(--colorLighter);
+    top: 0;
+    right: 0;
+    border-radius: 0 0 0 90px;
+    object-fit: contain;
+    width: calc(var(--headerHeight) * 1.3);
+    height: calc(var(--headerHeight) * 1.3);
+  }
   header a {
     padding: 0 30px;
     border-radius: 0;
@@ -260,33 +270,9 @@ header.collapsed + #logo {
   header .ico_menu {
     border-radius: 7px;
     margin: 0 auto 0 0;
-    height: 55px;
-    width: 55px;
   }
   header.collapsed {
-    height: 55px;
-    width: 55px;
-    min-width: 55px;
     overflow: unset;
-  }
-  header.collapsed + #logo {
-    width: 70px;
-    height: 70px;
-  }
-
-  #logo {
-    position: fixed;
-    background-color: white;
-    top: 0;
-    right: 0;
-    border-radius: 0 0 0 90px;
-    object-fit: contain;
-    width: 70px;
-    height: 70px;
-  }
-  #logo img {
-    width: 55px;
-    height: 55px;
   }
 }
 @media (max-width: 300px) {
@@ -331,17 +317,18 @@ header.collapsed + #logo {
   padding: 1.5vh 5vw;
   cursor: pointer;
   opacity: 1;
-  font-size: clamp(1.5em, 2vw + 2vh, 2em);
+  font-size: clamp(1.25em, 2vw + 2vh, 2em);
   display: flex;
   box-shadow: var(--shadowMedium);
-  transition: box-shadow 75ms, opacity 500ms, width 500ms, color 75ms, background-color 75ms;
+  transition: box-shadow 75ms, opacity 500ms, color 75ms, background-color 75ms, transform 500ms, height 500ms, padding 500ms;
   outline: 1px solid var(--colorLighter);
+  overflow: hidden;
 }
 .scrollContainer .btn i {
   line-height: 1;
   margin: auto;
   padding: 0;
-  color: var(--colorAccent);
+  color: var(--colorDarker);
 }
 .scrollContainer .btn:hover {
   box-shadow: var(--shadowIntense);
@@ -351,17 +338,20 @@ header.collapsed + #logo {
 }
 .scrollContainer .btn.hidden {
   opacity: 0;
-  width: 0;
-  overflow: hidden;
-  color: rgba(255, 255, 255, 0);
 }
 .scrollContainer .btnUp {
   top: 0;
   border-radius: 0 0 10px 10px;
 }
+.scrollContainer .btnUp.hidden {
+  transform: translate(-50%, -50%) scale(100%, 0%);
+}
 .scrollContainer .btnDown {
   bottom: 0;
   border-radius: 10px 10px 0 0;
+}
+.scrollContainer .btnDown.hidden {
+  transform: translate(-50%, 50%) scale(100%, 0%);
 }
 
 article {
@@ -486,7 +476,7 @@ article {
   left: 0;
   width: 34%;
   height: 100%;
-  padding: var(--headerHeight) 1vw 30px 1vw;
+  padding: var(--headerHeight) 1vw 1vw 1vw;
   display: flex;
   flex-direction: column;
   z-index: 1;
@@ -578,19 +568,31 @@ article {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  background-color: var(--colorAccent);
+}
+.contact .pContainer__2 a:hover {
+  transform: scale(1.05);
+}
+.contact .pContainer__2 a:hover p {
+  text-decoration: underline;
 }
 .contact .pContainer__2 .line {
   display: flex;
   padding: 2vh 2vw;
   flex-grow: 0;
+  flex-shrink: 1;
 }
 .contact .pContainer__2 .line i {
   font-size: 32px;
   margin: auto 1vw auto 0;
-  color: var(--colorAccent);
+  color: var(--colorLighter);
 }
-.contact .pContainer__2 .line p, .contact .pContainer__2 .line a {
+.contact .pContainer__2 .line p {
   margin: auto 0;
+  color: var(--colorLighter);
+}
+.contact .pContainer__2 h3 {
+  padding: 2vh 0;
 }
 .contact .pContainer__2 h2 {
   align-self: flex-start;
@@ -633,6 +635,10 @@ article {
     padding-left: calc(50% - 150px);
     padding-right: calc(50% - 150px);
     border-left: none;
+    background-color: var(--colorDarkTransparent);
+  }
+  .contact .pContainer__2 h2, .contact .pContainer__2 h3 {
+    color: var(--colorAccent);
   }
 }
 @media (max-width: 330px) {
