@@ -20,8 +20,8 @@
   --headerHeight: 70px;
   --scrollWidth: 17px;
   --fontSizeSmall: max(1.25vw, 1em);
-  --fontSizeMedium: max();
-  --fontSizeLarge: max(2.5vw, 2em);
+  --fontSizeMedium: max(1.75vw, 1.25em);
+  --fontSizeLarge: max(2.5vw, 1.5em);
 }
 
 html {
@@ -65,7 +65,7 @@ h2 {
 }
 
 p {
-  font-size: max(1.25vw, 1em);
+  font-size: var(--fontSizeSmall);
   line-height: 1.6;
 }
 
@@ -73,7 +73,7 @@ a, a > * {
   color: var(--colorAccent);
   text-decoration: none;
   line-height: 1.6;
-  font-size: max(1.25vw, 1em);
+  font-size: var(--fontSizeSmall);
 }
 
 body {
@@ -160,7 +160,7 @@ header > a {
   padding: 0 1vw;
   background-color: var(--colorAccent);
   color: var(--colorLighter);
-  font-size: 20px;
+  font-size: var(--fontSizeMedium);
   white-space: nowrap;
   transition: opacity 500ms, background-color 500ms;
   transition: transform 75ms, box-shadow 75ms, border-radius 75ms;
@@ -297,7 +297,7 @@ header.collapsed + #logo {
 }
 .pContainer {
   padding: 1vw;
-  overflow: scroll;
+  overflow: hidden;
 }
 .pContainer h2 {
   align-self: end;
@@ -324,23 +324,24 @@ header.collapsed + #logo {
 }
 .scrollContainer .btn {
   background-color: var(--colorLighterTransparenter);
-  height: 40px;
   position: absolute;
   z-index: 9;
-  left: 45vw;
-  right: 45vw;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 1.5vh 5vw;
   cursor: pointer;
   opacity: 1;
-  font-size: 30px;
+  font-size: clamp(1.5em, 2vw + 2vh, 2em);
   display: flex;
   box-shadow: var(--shadowMedium);
   transition: box-shadow 75ms, opacity 500ms, width 500ms, color 75ms, background-color 75ms;
+  outline: 1px solid var(--colorLighter);
 }
-.scrollContainer .btn p {
+.scrollContainer .btn i {
   line-height: 1;
   margin: auto;
   padding: 0;
-  color: var(--colorDark);
+  color: var(--colorAccent);
 }
 .scrollContainer .btn:hover {
   box-shadow: var(--shadowIntense);
@@ -396,6 +397,7 @@ article {
   color: var(--colorAccent);
   background-color: var(--colorLighterTransparent);
   padding: 10vh 0;
+  text-shadow: unset;
 }
 
 /*
@@ -457,6 +459,7 @@ article {
     padding-left: calc(50% - 150px);
     padding-right: calc(50% - 150px);
     border-left: none;
+    padding-top: 1vw;
   }
 }
 @media (max-width: 330px) {
@@ -525,6 +528,7 @@ article {
     padding-left: calc(50% - 150px);
     padding-right: calc(50% - 150px);
     border-right: none;
+    padding-top: 1vw;
   }
 }
 @media (max-width: 330px) {
@@ -548,7 +552,6 @@ article {
   height: 100vh;
   flex-grow: 0;
   flex-shrink: 0;
-  overflow: scroll;
   background-color: var(--colorDarkTransparent);
 }
 .contact .pContainer__1 {
@@ -578,12 +581,12 @@ article {
 }
 .contact .pContainer__2 .line {
   display: flex;
-  padding: 0 0 0 2vw;
+  padding: 2vh 2vw;
   flex-grow: 0;
 }
 .contact .pContainer__2 .line i {
   font-size: 32px;
-  margin: auto 0;
+  margin: auto 1vw auto 0;
   color: var(--colorAccent);
 }
 .contact .pContainer__2 .line p, .contact .pContainer__2 .line a {

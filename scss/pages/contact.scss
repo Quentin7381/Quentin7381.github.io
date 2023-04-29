@@ -15,8 +15,6 @@
         flex-grow: 0;
         flex-shrink: 0;
 
-        overflow: scroll;
-
         background-color: var(--colorDarkTransparent);
 
         &__1{
@@ -51,12 +49,12 @@
 
             & .line{
                 display: flex;
-                padding: 0 0 0 2vw;
+                padding: 2vh 2vw;
                 flex-grow: 0;
 
                 & i{
                     font-size: 32px;
-                    margin: auto 0;
+                    margin: auto calc(1vw) auto 0;
                     color: var(--colorAccent);
 
                 }

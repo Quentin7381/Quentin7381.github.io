@@ -58,7 +58,7 @@ header {
     
         background-color: var(--colorAccent);
         color: var(--colorLighter);
-        font-size: 20px;
+        font-size: var(--fontSizeMedium);
         white-space: nowrap;
     
         transition: opacity 500ms, background-color 500ms;

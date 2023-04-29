@@ -22,23 +22,24 @@
     
     & .btn {
         background-color: var(--colorLighterTransparenter);
-        height: 40px;
         position: absolute;
         z-index: 9;
-        left: 45vw;
-        right: 45vw;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: calc(1.5vh) calc(5vw);
         cursor: pointer;
         opacity: 1;
-        font-size: 30px;
+        font-size: clamp(1.5em, calc(2vw + 2vh),2em);
         display: flex;
         box-shadow: var(--shadowMedium);
         transition: box-shadow 75ms, opacity 500ms, width 500ms, color 75ms, background-color 75ms;
+        outline: 1px solid var(--colorLighter);
 
-        & p {
+        & i {
             line-height: 1;
             margin: auto;
             padding: 0;
-            color: var(--colorDark);
+            color: var(--colorAccent);
         }
         
         &:hover {

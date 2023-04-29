@@ -23,8 +23,8 @@
     --scrollWidth: 17px;
     
     --fontSizeSmall: max(1.25vw, 1em);
-    --fontSizeMedium: max();
-    --fontSizeLarge: max(2.5vw, 2em);
+    --fontSizeMedium: max(1.75vw, 1.25em);
+    --fontSizeLarge: max(2.5vw, 1.5em);
 }
 
 html {
@@ -68,7 +68,7 @@ h2 {
 }
 
 p{
-    font-size: max(1.25vw, 1em);
+    font-size: var(--fontSizeSmall);
     line-height: 1.6;
 }
 
@@ -76,7 +76,7 @@ a, a>* {
     color: var(--colorAccent);
     text-decoration: none;
     line-height: 1.6;
-    font-size: max(1.25vw, 1em);
+    font-size: var(--fontSizeSmall);
 }
 
 body {
