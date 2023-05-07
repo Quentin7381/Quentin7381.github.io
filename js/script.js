@@ -50,6 +50,7 @@ const scroller = {
 		const newTile = Math.round(
 			scroller.target.scrollTop / scroller.target.clientHeight
 		);
+		console.log(newTile);
 		
 		//Then if we changed tile...
 		if (newTile != scroller.tile) {
@@ -58,9 +59,8 @@ const scroller = {
 				//If it is the first one
 				case 0:
 					scroller.scrollBtns[0].classList.add("hidden");
-					if(SCREEN_WIDTH>AUTO_TOGGLE_WIDTH){
+					if(window.screen.width>AUTO_TOGGLE_WIDTH){
 						header.target.classList.remove("collapsed");
-						console.log(window.screen.width, AUTO_TOGGLE_WIDTH);
 						header.button.classList.add("hidden");
 					}
 					break;
@@ -69,9 +69,9 @@ const scroller = {
 					//Only if we came from the first one to the second one (so menu doesn't hide when scrolling upwards)
 					switch (scroller.tile) {
 						case 0:
+							scroller.scrollBtns[0].classList.remove("hidden");
 							header.target.classList.add("collapsed");
 							header.button.classList.remove("hidden");
-							scroller.scrollBtns[0].classList.remove("hidden");
 					}
 					break;
 				case 2:
