@@ -50,7 +50,6 @@ const scroller = {
 		const newTile = Math.round(
 			scroller.target.scrollTop / scroller.target.clientHeight
 		);
-		console.log(newTile);
 		
 		//Then if we changed tile...
 		if (newTile != scroller.tile) {
@@ -115,7 +114,6 @@ scroller.scrollBtns[1].addEventListener("click", () => scroller.scroll(1));
 /* ----- ----- ----- SMOOTH ANCHORS ----- ----- ----- */
 /* ----- ----- ----- -------------- ----- ----- ----- */
 //Prevent default anchor behaviour to insted scroll smoothly
-console.log(document.querySelectorAll('a[href^="#"]'));
 
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
 	anchor.addEventListener("click", (e) => {
@@ -127,7 +125,6 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
 });
 
 document.querySelector("#logo").addEventListener("click", (e) => {
-	console.log(e);
 	scroller.target.scroll({
 		top: 0,
 		behavior: "smooth",
