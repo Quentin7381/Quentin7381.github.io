@@ -57,9 +57,14 @@
 
 			<article class="accueil">
 				<img
-					alt="Photos d'un bas-relief en plâtre et d'outils"
-					src="img/potsEtOutilsBandeau.jpg"
-				/>
+					sizes="100vw"
+					srcset="
+					/img/potsEtOutilsBandeau_small.jpg 350w,
+					/img/potsEtOutilsBandeau_avg.jpg 800w,
+					/img/potsEtOutilsBandeau_large.jpg 1200w,
+					/img/potsEtOutilsBandeau.jpg 1920w"
+					src="/img/potsEtOutilsBandeau.jpg"
+					alt="Bas-reliefs en plâtre et outils">
 				<div class="title">
 					<h1>
 						En matière de, <br />
@@ -77,8 +82,15 @@
 					<div class="carrousel__item carrousel__item2">
 						<img
 							id="aPropos__carrousel__img2"
-							class="carrousel__img"
+							loading="lazy"
+							sizes="100vw"
+							srcset="
+								img/aquarium_tiny.jpg 320vw,
+								img/aquarium_small.jpg 854w,
+								img/aquarium_avg.jpg 1366w,
+								img/aquarium_large.jpg 1920w"
 							src="img/aquarium.jpg"
+							class="carrousel__img"
 							alt="image d'un poisson sculpté en bas-relief"
 						/>
 					</div>
@@ -88,6 +100,13 @@
 						<img
 							id="aPropos__carrousel__img4"
 							class="carrousel__img"
+							loading="lazy"
+							sizes="100vw"
+							srcset="
+								img/heronPortrait_tiny.jpg 320vw,
+								img/heronPortrait_small.jpg 854w,
+								img/heronPortrait_avg.jpg 1366w,
+								img/heronPortrait_large.jpg 1920w"
 							src="img/heronPortrait.jpg"
 							alt="image d'un arbre sculpté en bas-relief"
 						/>
@@ -118,6 +137,13 @@
 						<img
 							id="chantier__carrousel__img0"
 							class="carrousel__img"
+							loading="lazy"
+							sizes="100vw"
+							srcset="
+								img/arbrePortrait_tiny.jpg 320vw,
+								img/arbrePortrait_small.jpg 854w,
+								img/arbrePortrait_avg.jpg 1366w,
+								img/arbrePortrait_large.jpg 1920w"
 							src="img/arbrePortrait.jpg"
 							alt="dessin d'un arbre qui sera réalisé en bas-relief"
 						/>
@@ -126,6 +152,13 @@
 						<img
 							id="chantier__carrousel__img1"
 							class="carrousel__img"
+							loading="lazy"
+							sizes="100vw"
+							srcset="
+								img/chantierArbre1_tiny.jpg 320vw,
+								img/chantierArbre1_small.jpg 854w,
+								img/chantierArbre1_avg.jpg 1366w,
+								img/chantierArbre1_large.jpg 1920w"
 							src="img/chantierArbre1.jpg"
 							alt="dessin d'un arbre qui sera réalisé en bas-relief"
 						/>
@@ -163,7 +196,16 @@
 						</a>
 					</div>					
 				</div>
-				<img src="/img/arbreInterieur.jpg" alt="">
+				<img
+					loading="lazy"
+					sizes="100vw"
+					srcset="
+						img/arbreinterieur_tiny.jpg 320vw,
+						img/arbreinterieur_small.jpg 854w,
+						img/arbreinterieur_avg.jpg 1366w,
+						img/arbreinterieur_large.jpg 1920w" 
+					src="/img/arbreInterieur.jpg"
+					alt="photo d'un arbre en bas relief">
 			</article>
 		</div>
 		<footer></footer>
