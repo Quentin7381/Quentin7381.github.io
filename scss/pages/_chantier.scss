@@ -3,22 +3,11 @@
     <<<<< <<<<< <<<<< CHANTIER >>>>> >>>>> >>>>>
     <<<<< <<<<< <<<<< -------- >>>>> >>>>> >>>>>
 */
-.chantier{
-    & .carrousel__item {
-        width: 66%;
-
-        &0 {
-            width: 34%;
-        }
-    }
-    
-    
-    
+.chantier{    
     & .pContainer {
         position: absolute;
         right: unset;
         left: 0;
-        width: 34%;
         height: 100%;
 
         padding: var(--headerHeight) 1vw 1vw 1vw;
