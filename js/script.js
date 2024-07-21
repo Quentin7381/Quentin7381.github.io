@@ -75,6 +75,7 @@ const scroller = {
 				header.target.classList.add("collapsed");
 				scroller.scrollBtns[0].classList.remove("hidden");
 				scroller.scrollBtns[1].classList.add("hidden");
+				header.button.classList.remove("hidden");
 			}
 
 			// We show scroll buttons on other tiles
@@ -82,6 +83,7 @@ const scroller = {
 				header.target.classList.add("collapsed");
 				scroller.scrollBtns[0].classList.remove("hidden");
 				scroller.scrollBtns[1].classList.remove("hidden");
+				header.button.classList.remove("hidden");
 			}
 
 			scroller.tile = newTile;
