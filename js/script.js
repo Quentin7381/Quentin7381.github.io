@@ -9,21 +9,30 @@
  */
 const AUTO_TOGGLE_WIDTH = 780;
 
-if(window.screen.width <= AUTO_TOGGLE_WIDTH){
+if(window.innerWidth <= AUTO_TOGGLE_WIDTH){
 	document.querySelector("header").classList.add('collapsed')
 };
 
 const header = {
 	target: document.querySelector("header"),
 	button: document.querySelector(".headerToggleBtn"),
-	toggle: () => {
-		if (header.target.classList.contains("collapsed")) {
-			header.target.classList.remove("collapsed");
+	toggle: (event, state = null) => {
+		if (state === null) {
+			header.target.classList.toggle("collapsed");
 		} else {
-			header.target.classList.add("collapsed");
+			if (state) {
+				header.target.classList.add("collapsed");
+			} else {
+				header.target.classList.remove("collapsed");
+			}
 		}
 		return header.collapsed;
 	},
+	scrollToggle: (event, state = null) => {
+		if (window.innerWidth >= AUTO_TOGGLE_WIDTH) {
+			header.toggle(null, state);
+		}
+	}
 };
 
 header.button.addEventListener("click", header.toggle);
@@ -173,6 +182,7 @@ class Scroller {
 	actualizeButtons(newTile){
 		if(newTile == 0) {
 			this.scrollBtns[0].classList.add('hidden');
+			header.button.classList.add('hidden');
 		}
 
 		if(newTile == this.maxTile) {
@@ -181,6 +191,7 @@ class Scroller {
 
 		if(newTile > 0) {
 			this.scrollBtns[0].classList.remove('hidden');
+			header.button.classList.remove('hidden');
 		}
 
 		if(newTile < this.maxTile) {
@@ -216,11 +227,9 @@ class Scroller {
 const mainScroller = new Scroller(document.querySelector('.scrollContainer'));
 mainScroller.scrollCallback = (scroller, tile) => {
 	if(tile == 0) {
-		header.target.classList.remove('collapsed');
-		header.button.classList.add('hidden');
+		header.scrollToggle(null, false);
 	} else {
-		header.target.classList.add('collapsed');
-		header.button.classList.remove('hidden');
+		header.scrollToggle(null, true);
 	}
 }
 
