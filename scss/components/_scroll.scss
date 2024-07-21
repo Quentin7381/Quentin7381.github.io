@@ -7,7 +7,6 @@
 .scrollContainer {
     height: 100vh;
     overflow-y: scroll;
-    scroll-snap-type: y mandatory;
     scrollbar-color: var(--colorLighterTransparent) var(--colorDark);
     scrollbar-width: none;
 
@@ -106,7 +105,6 @@
 article {
     height: 100vh;
     width: 100vw;
-    scroll-snap-align: center;
     position: relative;
     overflow: hidden;
 }

@@ -69,8 +69,7 @@ class Scroller {
 	tiles = [];
 	actualTile = 0;
 	maxTile = 0;
-
-	boundaries = [];
+	snap = 'start';
 
 	scrollBtns = [];
 	snapTimer = null;
@@ -79,18 +78,18 @@ class Scroller {
 
 	scrollCallback = null;
 
-	constructor(container, direction = 'vertical') {
+	constructor(container, direction = 'vertical', snap = 'start') {
 		this.container = container;
 		this.container.addEventListener('scroll', this.onScroll);
 
 		this.tiles = container.querySelectorAll(':scope > .tile');
 		this.maxTile = this.tiles.length - 1;
 		this.direction = direction;
+		this.snap = snap;
 
 		this.createButton(-1);
 		this.createButton(1);
 
-		this.setBoundaries();
 		this.actualizeButtons(this.getCurrentTile());
 	}
 
@@ -98,21 +97,31 @@ class Scroller {
 		let scroll = this.direction == 'vertical' ? this.container.scrollTop : this.container.scrollLeft;
 		
 		let i = 0;
-		let boundary;
+		let closest;
 		do {
-			boundary = this.boundaries[i];
-		} while(scroll > boundary && i++ < this.maxTile);
+			let boundary = this.getBoundary(i);
+			let distanceToBoundary = Math.abs(scroll - boundary);
+			if(typeof closest == 'undefined' || distanceToBoundary < closest) {
+				closest = distanceToBoundary;
+			} else {
+				break;
+			}
+		} while(i++ < this.maxTile);
 
-		return i;
+		return i-1;
 	}
 
 
-	onScroll = (event) => {
+	onScroll = (event, noscroll = false) => {
 		let newTile = this.getCurrentTile();
 
 		if(newTile != this.actualTile) {
 			this.actualizeButtons(newTile);
 			this.actualTile = newTile;
+		}
+
+		if(noscroll) {
+			return;
 		}
 
 		if(typeof this.snapTimer != 'undefined') {
@@ -124,21 +133,41 @@ class Scroller {
 		}, 1000);
 	}
 
+	getBoundary(tile){
+		if(this.snap == 'start') {
+			return this.direction == 'vertical' ? this.tiles[tile].offsetTop : this.tiles[tile].offsetLeft;
+		} else {
+			return this.direction == 'vertical' ? this.tiles[tile].offsetTop + this.tiles[tile].offsetHeight - this.container.clientHeight : this.tiles[tile].offsetLeft + this.tiles[tile].offsetWidth - this.container.clientWidth;
+		}
+	}
+
 	scroll = (direction) => {
 		this.scrollTo(this.actualTile + direction);
 	}
 
 	scrollTo = (tile) => {
+
 		if(tile < 0 || tile > this.maxTile) {
 			return;
 		}
 
-		this.tiles[tile].scrollIntoView({
-			behavior: 'smooth',
-			block: 'start',
-		});
+		let boundary = this.getBoundary(tile);
+		let scroll = this.getScrollObject(boundary);
 
+		this.container.scroll(scroll);
+		
 		this.actualTile = tile;
+		this.onScroll(null, true);
+	}
+
+	getScrollObject(boundary){
+		let scroll = {
+			behavior: 'smooth'
+		}
+
+		scroll[this.direction == 'vertical' ? 'top' : 'left'] = boundary;
+		
+		return scroll;
 	}
 
 	actualizeButtons(newTile){
@@ -182,12 +211,6 @@ class Scroller {
 		this.container.appendChild(btn);
 		this.scrollBtns.push(btn);
 	}
-
-	setBoundaries() {
-		this.tiles.forEach((tile) => {
-			this.boundaries.push(this.direction == 'vertical' ? tile.offsetTop : tile.offsetLeft);
-		});
-	}
 }
 
 const mainScroller = new Scroller(document.querySelector('.scrollContainer'));
@@ -204,5 +227,6 @@ mainScroller.scrollCallback = (scroller, tile) => {
 let carrousels = document.querySelectorAll('.carrousel');
 carrousels = Array.from(carrousels);
 carrousels.map((carrousel) => {
-	let scroller = new Scroller(carrousel, 'horizontal');
+	let snap = carrousel.dataset.snap || 'start';
+	let scroller = new Scroller(carrousel, 'horizontal', snap);
 });
