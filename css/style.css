@@ -339,7 +339,6 @@ header.collapsed .headerToggleBtn__bars {
   background-color: var(--colorLighterTransparenter);
   position: absolute;
   z-index: 9;
-  left: 50%;
   transform: translateX(-50%);
   font-size: 1.75rem;
   padding: 0.25em 2.5em;
@@ -351,6 +350,7 @@ header.collapsed .headerToggleBtn__bars {
   transition: box-shadow 75ms, opacity 500ms, color 75ms, background-color 75ms, transform 500ms, height 500ms, padding 500ms;
   outline: 1px solid var(--colorLighter);
   overflow: hidden;
+  border-radius: 0 0 10px 10px;
 }
 .scrollContainer .btn i {
   line-height: 1;
@@ -367,19 +367,38 @@ header.collapsed .headerToggleBtn__bars {
 .scrollContainer .btn.hidden {
   opacity: 0;
 }
-.scrollContainer .btnUp {
+.scrollContainer .btn.up {
   top: 0;
   border-radius: 0 0 10px 10px;
+  left: 50%;
+  transform: rotate(0deg) translateX(-50%);
 }
-.scrollContainer .btnUp.hidden {
-  transform: translate(-50%, -50%) scale(100%, 0%);
+.scrollContainer .btn.up .hidden {
+  transform: rotate(0deg) translate(-50%, -50%) scale(100%, 0%);
 }
-.scrollContainer .btnDown {
+.scrollContainer .btn.right {
+  right: 0;
+  top: 50%;
+  transform: rotate(90deg) translateY(-150%);
+}
+.scrollContainer .btn.right .hidden {
+  transform: rotate(90deg) translate(50%, -50%) scale(100%, 0%);
+}
+.scrollContainer .btn.down {
   bottom: 0;
-  border-radius: 10px 10px 0 0;
+  left: 50%;
+  transform: rotate(180deg) translateX(50%);
 }
-.scrollContainer .btnDown.hidden {
-  transform: translate(-50%, 50%) scale(100%, 0%);
+.scrollContainer .btn.down .hidden {
+  transform: rotate(180deg) translate(-50%, -50%) scale(100%, 0%);
+}
+.scrollContainer .btn.left {
+  left: 0;
+  top: 50%;
+  transform: rotate(-90deg) translateY(-150%);
+}
+.scrollContainer .btn.left .hidden {
+  transform: rotate(-90deg) translate(-50%, -50%) scale(100%, 0%);
 }
 
 article {
