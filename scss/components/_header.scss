@@ -54,11 +54,15 @@ header {
         display: flex;
         align-items: center;
         height: var(--headerHeight);
-        padding: 0 1vw;
+        padding: 1rem;
+
+        letter-spacing: 0.1em;
     
         background-color: var(--colorAccent);
         color: var(--colorLighter);
         font-size: var(--fontSizeMedium);
+        font-weight: var(--fontWeightAccent);
+        font-family: var(--fontAccent);
         white-space: nowrap;
     
         transition: opacity 500ms, background-color 500ms;
@@ -66,7 +70,7 @@ header {
 
         &:hover{
             transform: scale(1.10);
-            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            box-shadow: var(--shadowStrong);
         }
     }
 }

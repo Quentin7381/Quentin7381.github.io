@@ -7,6 +7,7 @@
     --shadowStrong: rgba(0, 0, 0, 0.6) 0px 5px 15px;
     --shadowNeat: rgba(0, 0, 0, 0.6) 2px 2px 2px;
     --shadowGlow: rgba(255, 255, 255, 0.35) 0px 5px 15px;
+    --shadowBright: rgba(255, 255, 255, 0.75) 0px 5px 15px;
 
     --colorAccent: #4b1412;
     --colorAccentTransparent: #4b141273;
@@ -16,15 +17,24 @@
     --colorLighterTransparenter: #ffffff40;
     --colorDarkTransparent: #28282866;
     --colorDark: #282828;
-    --fontAccent: "Arial";
-    --fontMain: "Arial";
+    --colorDarker: #1a1a1a;
 
-    --headerHeight: 10vh;
-    --scrollWidth: 17px;
-    
-    --fontSizeSmall: max(1.25vw, 1em);
-    --fontSizeMedium: max(1.75vw, 1.25em);
-    --fontSizeLarge: max(2.5vw, 1.5em);
+    --fontAccent: "Arial";
+    --fontMain: "Open Sans";
+    --fontWeight: 300;
+    --fontWeightAccent: 500;
+
+    --headerHeight: 4rem;
+    // --scrollWidth: 17px;
+
+    --fontSizeTiny: 0.8rem;
+    --fontSizeSmall: 1.1rem;
+    --fontSizeMedium: 1.25rem;
+    --fontSizeLarge: 1.5rem;
+}
+
+:root {
+    font-size: var(--fontSizeSmall);
 }
 
 html {
@@ -36,14 +46,14 @@ html {
     margin: 0;
     padding: 0;
     font-family: var(--fontMain);
-    font-weight: 100;
+    font-weight: var(--fontWeight);
+    color: var(--colorLighter);
 }
 
 h1,
 h2,
-h3,
-p{
-    color: var(--colorLighter);
+h3{
+    padding: 0.5em 0;
 }
 
 h1,
@@ -51,7 +61,6 @@ h2,
 h3,
 p,
 a {
-    padding: 1vw;
     text-shadow: var(--shadowLight);
 }
 
@@ -59,12 +68,14 @@ h1 {
     margin: 0;
     color: var(--colorAccent);
     text-align: center;
+    font-family: var(--fontAccent);
 }
 
 h2 {
     text-align: center;
     border-bottom: 2px solid var(--colorLighter);
     font-size: var(--fontSizeLarge);
+    font-family: var(--fontAccent);
 }
 
 p{
